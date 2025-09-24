@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecLogAI - MVP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 아이콘 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 간단한 커스텀 스타일 */
+        body {
+            background-color: #f0f2f5; /* 연한 회색 배경 */
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- 헤더 -->
+    <header class="bg-white shadow-md">
+        <nav class="main-container flex justify-between items-center py-4">
+            <h1 class="text-2xl font-bold text-gray-800">
+                <i class="fas fa-shield-halved text-blue-600"></i>
+                SecLogAI
+            </h1>
+        </nav>
+    </header>
+
+    <main class="main-container">
+
+        <!-- 로딩 스피너 -->
+        <div id="loading-spinner" class="hidden text-center py-20">
+            <i class="fas fa-spinner fa-spin text-blue-600 text-4xl"></i>
+            <p class="mt-4 text-gray-600">분석 중입니다. 잠시만 기다려주세요...</p>
+        </div>
+
+        <!-- ================================== -->
+        <!-- 페이지 1: 메인 대시보드 (홈)         -->
+        <!-- ================================== -->
+        <div id="home-page">
+            <!-- 로그 파일 업로드 섹션 -->
+            <div class="card mb-8">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">새로운 로그 파일 분석하기</h2>
+                <form id="upload-form">
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                        <input type="file" id="file-input" class="hidden" required>
+                        <label for="file-input" class="cursor-pointer text-blue-600 font-semibold">
+                            <i class="fas fa-upload mr-2"></i>
+                            파일을 선택하거나 여기에 드래그 앤 드롭하세요.
+                        </label>
+                        <p id="file-name-display" class="mt-2 text-gray-500"></p>
+                    </div>
+                    <button type="submit" class="mt-4 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+                        업로드 및 분석 시작
+                    </button>
+                </form>
+            </div>
+
+            <!-- 업로드된 로그 파일 목록 -->
+            <div>
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">분석할 로그 파일 선택</h2>
+                <div id="file-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 자바스크립트로 파일 목록이 여기에 채워집니다. -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- 페이지 2: 분석 허브                   -->
+        <!-- ================================== -->
+        <div id="analysis-page" class="hidden">
+            <button onclick="showPage('home-page')" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
+                <i class="fas fa-arrow-left mr-2"></i>
+                파일 목록으로 돌아가기
+            </button>
+            <div class="card mb-8">
+                <h2 class="text-2xl font-bold text-gray-800">
+                    분석 파일: <span id="selected-file-name" class="text-blue-600"></span>
+                </h2>
+                <p class="mt-2 text-gray-600">아래에서 수행할 분석 모델을 선택하세요.</p>
+            </div>
+
+            <!-- 분석 모델 선택 버튼들 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div onclick="runAnalysis('basic-stats')" class="card text-center cursor-pointer">
+                    <i class="fas fa-chart-pie text-3xl text-green-500 mb-3"></i>
+                    <h3 class="font-semibold text-lg">기본 통계 분석</h3>
+                </div>
+                <div onclick="runAnalysis('security-threat')" class="card text-center cursor-pointer">
+                    <i class="fas fa-exclamation-triangle text-3xl text-red-500 mb-3"></i>
+                    <h3 class="font-semibold text-lg">보안 위협 분석</h3>
+                </div>
+                <div onclick="runAnalysis('anomaly')" class="card text-center cursor-pointer">
+                    <i class="fas fa-search text-3xl text-yellow-500 mb-3"></i>
+                    <h3 class="font-semibold text-lg">이상 행위 분석</h3>
+                </div>
+                <div onclick="runAnalysis('correlation')" class="card text-center cursor-pointer">
+                    <i class="fas fa-link text-3xl text-purple-500 mb-3"></i>
+                    <h3 class="font-semibold text-lg">상관관계 분석</h3>
+                </div>
+                <div onclick="runAnalysis('predictive')" class="card text-center cursor-pointer">
+                    <i class="fas fa-brain text-3xl text-indigo-500 mb-3"></i>
+                    <h3 class="font-semibold text-lg">예측 분석</h3>
+                </div>
+                <div class="card text-center bg-gray-100 cursor-not-allowed">
+                    <i class="fas fa-plus text-3xl text-gray-400 mb-3"></i>
+                    <h3 class="font-semibold text-lg text-gray-500">(추가될 모델)</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- 페이지 3: 분석 결과 페이지           -->
+        <!-- ================================== -->
+        <div id="result-page" class="hidden">
+             <button id="back-to-analysis" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
+                <i class="fas fa-arrow-left mr-2"></i>
+                분석 허브로 돌아가기
+            </button>
+            <div class="card">
+                <h2 id="result-title" class="text-2xl font-bold text-gray-800 mb-4"></h2>
+                <pre id="result-content" class="whitespace-pre-wrap bg-gray-100 p-4 rounded-lg font-mono text-sm"></pre>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- 전역 변수 및 설정 ---
+        const API_BASE_URL = 'http://127.0.0.1:8000'; // Django 서버 주소
+        let selectedFileId = null; // 사용자가 선택한 파일의 ID
+
+        // --- 페이지 네비게이션 관리 ---
+        const pages = ['home-page', 'analysis-page', 'result-page', 'loading-spinner'];
+
+        function showPage(pageId) {
+            pages.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        // --- API 호출 함수 ---
+
+        // 1. 업로드된 파일 목록 가져오기
+        async function fetchFiles() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/logs/files/`);
+                if (!response.ok) throw new Error('서버에서 파일 목록을 가져오는 데 실패했습니다.');
+
+                const files = await response.json();
+                const fileListElement = document.getElementById('file-list');
+                fileListElement.innerHTML = ''; // 목록 초기화
+
+                if (files.length === 0) {
+                    fileListElement.innerHTML = `<p class="text-gray-500 col-span-full text-center">업로드된 파일이 없습니다. 새 로그 파일을 업로드해주세요.</p>`;
+                } else {
+                    files.forEach(file => {
+                        const fileCard = `
+                            <div class="card cursor-pointer" onclick="selectFile(${file.id}, '${file.name}')">
+                                <div class="flex items-center">
+                                    <i class="fas fa-file-alt text-2xl text-gray-400 mr-4"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">${file.name}</h3>
+                                        <p class="text-sm text-gray-500">${new Date(file.uploaded_at).toLocaleString()}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        fileListElement.innerHTML += fileCard;
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching files:', error);
+                alert(error.message);
+            }
+        }
+
+        // 2. 파일 업로드 처리
+        async function uploadFile(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('file-input');
+            if (fileInput.files.length === 0) {
+                alert('업로드할 파일을 선택해주세요.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('name', file.name);
+
+            showPage('loading-spinner');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/logs/upload/`, {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) throw new Error('파일 업로드에 실패했습니다.');
+
+                const result = await response.json();
+                alert(`파일 업로드 및 처리 성공!\n- 처리된 로그: ${result.processed_entries}개`);
+
+                // 업로드 성공 후, 해당 파일의 분석 페이지로 바로 이동
+                selectFile(result.log_file_id, file.name);
+                fetchFiles(); // 파일 목록 갱신
+
+            } catch (error) {
+                console.error('Error uploading file:', error);
+                alert(error.message);
+                showPage('home-page');
+            }
+        }
+
+        // 3. 분석 실행
+        async function runAnalysis(analysisType) {
+            if (!selectedFileId) {
+                alert('분석할 파일이 선택되지 않았습니다.');
+                return;
+            }
+
+            // 분석 API 엔드포인트 매핑
+            const analysisEndpoints = {
+                'basic-stats': `${API_BASE_URL}/analysis/basic-stats/`,
+                'security-threat': `${API_BASE_URL}/analysis/security-threat/`,
+                'anomaly': `${API_BASE_URL}/analysis/anomaly/`,
+                'correlation': `${API_BASE_URL}/analysis/correlation/`,
+                'predictive': `${API_BASE_URL}/analysis/predictive/`,
+            };
+
+            const url = analysisEndpoints[analysisType];
+            if (!url) {
+                alert('알 수 없는 분석 유형입니다.');
+                return;
+            }
+
+            showPage('loading-spinner');
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`'${analysisType}' 분석에 실패했습니다.`);
+
+                const result = await response.json();
+
+                // 결과 페이지 채우기
+                const titleMap = {
+                    'basic-stats': '기본 통계 분석 결과',
+                    'security-threat': '보안 위협 분석 결과',
+                    'anomaly': '이상 행위 분석 결과',
+                    'correlation': '상관관계 분석 결과',
+                    'predictive': '예측 분석 결과',
+                };
+
+                document.getElementById('result-title').innerText = titleMap[analysisType];
+                // JSON 객체를 보기 좋게 문자열로 변환하여 표시
+                document.getElementById('result-content').innerText = JSON.stringify(result, null, 2);
+
+                showPage('result-page');
+
+            } catch (error) {
+                console.error('Error running analysis:', error);
+                alert(error.message);
+                showPage('analysis-page'); // 실패 시 분석 허브 페이지로 복귀
+            }
+        }
+
+        // --- 페이지 이벤트 및 핸들러 ---
+
+        // 1. 파일 선택
+        function selectFile(fileId, fileName) {
+            selectedFileId = fileId;
+            document.getElementById('selected-file-name').innerText = fileName;
+            // '뒤로가기' 버튼이 분석 허브로 돌아오도록 설정
+            document.getElementById('back-to-analysis').onclick = () => showPage('analysis-page');
+            showPage('analysis-page');
+        }
+
+        // 2. 파일 입력 UI 처리
+        document.getElementById('file-input').addEventListener('change', (event) => {
+            const fileNameDisplay = document.getElementById('file-name-display');
+            if (event.target.files.length > 0) {
+                fileNameDisplay.textContent = event.target.files[0].name;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        });
+
+        // --- 초기화 ---
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home-page');
+            fetchFiles();
+            document.getElementById('upload-form').addEventListener('submit', uploadFile);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+Dec 15 08:30:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:30:15 +0000] "GET /index.html HTTP/1.1" 200 1234
+Dec 15 08:30:22 webserver01 httpd: 10.0.0.50 - - [15/Dec/2023:08:30:22 +0000] "GET /admin/login.php HTTP/1.1" 200 856
+Dec 15 08:31:05 firewall kernel: [IPTABLES] ALLOW IN=eth0 SRC=192.168.1.100 DST=10.0.0.1 PROTO=TCP DPT=80
+Dec 15 08:31:15 webserver01 sshd[1234]: Failed password for admin from 203.0.113.10 port 22 ssh2
+Dec 15 08:31:18 webserver01 sshd[1234]: Failed password for admin from 203.0.113.10 port 22 ssh2
+Dec 15 08:31:22 webserver01 sshd[1234]: Failed password for admin from 203.0.113.10 port 22 ssh2
+Dec 15 08:31:25 webserver01 sshd[1234]: Failed password for root from 203.0.113.10 port 22 ssh2
+Dec 15 08:31:28 webserver01 sshd[1234]: Failed password for user from 203.0.113.10 port 22 ssh2
+Dec 15 08:32:10 webserver01 httpd: 192.168.1.105 - - [15/Dec/2023:08:32:10 +0000] "GET /products.php?id=1' OR 1=1-- HTTP/1.1" 500 0
+Dec 15 08:32:45 webserver01 httpd: 192.168.1.105 - - [15/Dec/2023:08:32:45 +0000] "POST /search.php HTTP/1.1" 200 2341
+Dec 15 08:33:12 firewall kernel: [IPTABLES] DENY IN=eth0 SRC=203.0.113.10 DST=10.0.0.1 PROTO=TCP DPT=22
+Dec 15 08:33:30 webserver01 httpd: 172.16.0.25 - - [15/Dec/2023:08:33:30 +0000] "GET /admin/../../../etc/passwd HTTP/1.1" 404 156
+Dec 15 08:34:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:34:15 +0000] "GET /contact.html HTTP/1.1" 200 789
+Dec 15 08:35:22 webserver01 httpd: 203.0.113.50 - - [15/Dec/2023:08:35:22 +0000] "GET /login.php HTTP/1.1" 200 1456
+Dec 15 08:35:45 webserver01 httpd: 203.0.113.50 - - [15/Dec/2023:08:35:45 +0000] "POST /login.php HTTP/1.1" 302 0
+Dec 15 08:36:12 webserver01 httpd: 172.16.0.25 - - [15/Dec/2023:08:36:12 +0000] "GET /<script>alert(document.cookie)</script> HTTP/1.1" 400 234
+Dec 15 08:37:30 database01 mysqld[5678]: Access denied for user 'root'@'192.168.1.105' (using password: YES)
+Dec 15 08:38:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:38:15 +0000] "GET /news.html HTTP/1.1" 200 3456
+Dec 15 08:39:20 firewall kernel: [IPTABLES] DENY IN=eth0 SRC=172.16.0.25 DST=10.0.0.1 PROTO=TCP DPT=1433
+Dec 15 08:40:10 webserver01 httpd: 10.0.0.50 - - [15/Dec/2023:08:40:10 +0000] "GET /admin/config.php HTTP/1.1" 403 234
+Dec 15 08:41:25 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:08:41:25 +0000] "GET /robots.txt HTTP/1.1" 404 156
+Dec 15 08:42:30 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:08:42:30 +0000] "GET /phpmyadmin/ HTTP/1.1" 404 156
+Dec 15 08:43:15 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:08:43:15 +0000] "GET /wp-admin/ HTTP/1.1" 404 156
+Dec 15 08:44:20 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:08:44:20 +0000] "GET /.git/config HTTP/1.1" 404 156
+Dec 15 08:45:30 webserver01 httpd: 192.168.1.110 - - [15/Dec/2023:08:45:30 +0000] "GET /api/users HTTP/1.1" 200 4567
+Dec 15 08:46:45 firewall kernel: [IPTABLES] ALLOW IN=eth0 SRC=192.168.1.110 DST=10.0.0.1 PROTO=TCP DPT=443
+Dec 15 08:47:12 webserver01 httpd: 172.16.0.25 - - [15/Dec/2023:08:47:12 +0000] "GET /admin/users.php?id=1 UNION SELECT username,password FROM users-- HTTP/1.1" 500 0
+Dec 15 08:48:30 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:48:30 +0000] "POST /feedback.php HTTP/1.1" 200 1234
+Dec 15 08:49:15 webserver01 sshd[1567]: Accepted publickey for user01 from 192.168.1.120 port 22 ssh2
+Dec 15 08:50:22 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:08:50:22 +0000] "HEAD / HTTP/1.1" 200 0
+Dec 15 08:51:30 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:08:51:30 +0000] "OPTIONS / HTTP/1.1" 200 0
+Dec 15 08:52:45 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:08:52:45 +0000] "TRACE / HTTP/1.1" 405 156
+Dec 15 08:53:12 database01 mysqld[5678]: [Warning] IP address '172.16.0.25' could not be resolved
+Dec 15 08:54:30 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:54:30 +0000] "GET /about.html HTTP/1.1" 200 2345
+Dec 15 08:55:15 firewall kernel: [IPTABLES] DENY IN=eth0 SRC=203.0.113.10 DST=10.0.0.1 PROTO=TCP DPT=3389
+Dec 15 08:56:20 webserver01 httpd: 10.0.0.50 - - [15/Dec/2023:08:56:20 +0000] "GET /dashboard.php HTTP/1.1" 200 5678
+Dec 15 08:57:30 webserver01 httpd: 203.0.113.150 - - [15/Dec/2023:08:57:30 +0000] "GET / HTTP/1.1" 200 1234
+Dec 15 08:58:45 webserver01 httpd: 203.0.113.150 - - [15/Dec/2023:08:58:45 +0000] "GET /style.css HTTP/1.1" 200 4567
+Dec 15 08:59:12 webserver01 httpd: 203.0.113.150 - - [15/Dec/2023:08:59:12 +0000] "GET /script.js HTTP/1.1" 200 2345
+Dec 15 09:00:30 webserver01 httpd: 172.16.0.30 - - [15/Dec/2023:09:00:30 +0000] "GET /admin/backup.sql HTTP/1.1" 403 234
+Dec 15 09:01:15 webserver01 sshd[1890]: Failed password for admin from 172.16.0.30 port 22 ssh2
+Dec 15 09:01:18 webserver01 sshd[1890]: Failed password for admin from 172.16.0.30 port 22 ssh2
+Dec 15 09:01:21 webserver01 sshd[1890]: Failed password for admin from 172.16.0.30 port 22 ssh2
+Dec 15 09:02:30 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:09:02:30 +0000] "GET /services.html HTTP/1.1" 200 3456
+Dec 15 09:03:45 firewall kernel: [IPTABLES] ALLOW IN=eth0 SRC=192.168.1.100 DST=10.0.0.2 PROTO=TCP DPT=443
+Dec 15 09:04:12 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:04:12 +0000] "GET /admin/logs.php HTTP/1.1" 403 234
+Dec 15 09:05:30 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:05:30 +0000] "POST /search.php HTTP/1.1" 200 1234
+Dec 15 09:06:15 database01 mysqld[5678]: [ERROR] Access denied for user ''@'203.0.113.10' (using password: NO)
+Dec 15 09:07:22 webserver01 httpd: 192.168.1.110 - - [15/Dec/2023:09:07:22 +0000] "GET /api/products/1 HTTP/1.1" 200 2345
+Dec 15 09:08:30 webserver01 httpd: 172.16.0.25 - - [15/Dec/2023:09:08:30 +0000] "GET /uploads/shell.php HTTP/1.1" 404 156
+Dec 15 09:09:45 webserver01 httpd: 203.0.113.200 - - [15/Dec/2023:09:09:45 +0000] "GET / HTTP/1.1" 200 1234
+Dec 15 09:10:12 webserver01 httpd: 203.0.113.200 - - [15/Dec/2023:09:10:12 +0000] "GET /favicon.ico HTTP/1.1" 404 156
+Dec 15 09:11:30 firewall kernel: [IPTABLES] DENY IN=eth0 SRC=172.16.0.25 DST=10.0.0.1 PROTO=TCP DPT=445
+Dec 15 09:12:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:09:12:15 +0000] "POST /contact.php HTTP/1.1" 200 789
+Dec 15 09:13:22 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:13:22 +0000] "GET /admin/phpinfo.php HTTP/1.1" 403 234
+Dec 15 09:14:30 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:14:30 +0000] "GET /server-status HTTP/1.1" 403 234
+Dec 15 09:15:45 webserver01 httpd: 192.168.1.110 - - [15/Dec/2023:09:15:45 +0000] "GET /api/orders HTTP/1.1" 200 5678
+Dec 15 09:16:12 webserver01 sshd[2134]: Accepted password for user02 from 192.168.1.130 port 22 ssh2
+Dec 15 09:17:30 webserver01 httpd: 172.16.0.25 - - [15/Dec/2023:09:17:30 +0000] "GET /admin/test.php?cmd=id HTTP/1.1" 500 0
+Dec 15 09:18:15 firewall kernel: [IPTABLES] ALLOW IN=eth0 SRC=192.168.1.130 DST=10.0.0.1 PROTO=TCP DPT=22
+Dec 15 09:19:22 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:19:22 +0000] "GET /admin/ HTTP/1.1" 403 234
+Dec 15 09:20:30 webserver01 httpd: 203.0.113.100 - - [15/Dec/2023:09:20:30 +0000] "GET / HTTP/1.1" 200 1234
+Dec 15 09:21:45 webserver01 httpd: 203.0.113.100 - - [15/Dec/2023:09:21:45 +0000] "GET /products.html HTTP/1.1" 200 3456
+Dec 15 09:22:12 database01 mysqld[5678]: [Warning] Aborted connection 15 to db: 'webapp' user: 'webuser' host: '192.168.1.105'
+Dec 15 09:23:30 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:09:23:30 +0000] "GET /gallery.html HTTP/1.1" 200 4567
+Dec 15 09:24:15 webserver01 httpd: 172.16.0.30 - - [15/Dec/2023:09:24:15 +0000] "GET /admin/users.php?id='; DROP TABLE users;-- HTTP/1.1" 500 0
+Dec 15 09:25:22 firewall kernel: [IPTABLES] DENY IN=eth0 SRC=172.16.0.30 DST=10.0.0.1 PROTO=TCP DPT=1433
+Dec 15 09:26:30 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:26:30 +0000] "GET /cgi-bin/test.cgi HTTP/1.1" 404 156
+Dec 15 09:27:45 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:27:45 +0000] "GET /scripts/samples/ HTTP/1.1" 404 156
+Dec 15 09:28:12 webserver01 httpd: 192.168.1.110 - - [15/Dec/2023:09:28:12 +0000] "POST /api/auth HTTP/1.1" 200 234
+Dec 15 09:29:30 webserver01 httpd: 203.0.113.100 - - [15/Dec/2023:09:29:30 +0000] "GET /blog.html HTTP/1.1" 200 2345
+Dec 15 09:30:15 webserver01 sshd[2345]: Failed password for oracle from 203.0.113.250 port 22 ssh2
+Dec 15 09:30:18 webserver01 sshd[2345]: Failed password for postgres from 203.0.113.250 port 22 ssh2
+Dec 15 09:30:21 webserver01 sshd[2345]: Failed password for mysql from 203.0.113.250 port 22 ssh2
+Dec 15 09:30:24 webserver01 sshd[2345]: Failed password for admin from 203.0.113.250 port 22 ssh2
+Dec 15 09:30:27 webserver01 sshd[2345]: Failed password for root from 203.0.113.250 port 22 ssh2
+Dec 15 09:31:22 firewall kernel: [IPTABLES] DENY IN=eth0 SRC=203.0.113.250 DST=10.0.0.1 PROTO=TCP DPT=22
+Dec 15 09:32:30 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:09:32:30 +0000] "GET /portfolio.html HTTP/1.1" 200 3456
+Dec 15 09:33:45 webserver01 httpd: 172.16.0.25 - - [15/Dec/2023:09:33:45 +0000] "GET /admin/config.php?file=../../../etc/passwd HTTP/1.1" 500 0
+Dec 15 09:34:12 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:34:12 +0000] "POST /search.php HTTP/1.1" 200 1234
+Dec 15 09:35:30 database01 mysqld[5678]: [ERROR] User 'root' has exceeded the 'max_connections_per_hour' resource
+Dec 15 09:36:15 webserver01 httpd: 192.168.1.110 - - [15/Dec/2023:09:36:15 +0000] "GET /api/reports HTTP/1.1" 200 7890
+Dec 15 09:37:22 webserver01 httpd: 203.0.113.100 - - [15/Dec/2023:09:37:22 +0000] "GET /downloads.html HTTP/1.1" 200 1234
+Dec 15 09:38:30 firewall kernel: [IPTABLES] ALLOW IN=eth0 SRC=203.0.113.100 DST=10.0.0.1 PROTO=TCP DPT=80
+Dec 15 09:39:45 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:39:45 +0000] "GET /admin/database.php HTTP/1.1" 403 234
+Dec 15 09:40:12 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:40:12 +0000] "GET /admin/settings.php HTTP/1.1" 403 234
+Dec 15 09:41:30 webserver01 httpd: 172.16.0.30 - - [15/Dec/2023:09:41:30 +0000] "GET /admin/shell.php?cmd=cat%20/etc/passwd HTTP/1.1" 404 156
+Dec 15 09:42:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:09:42:15 +0000] "GET /faq.html HTTP/1.1" 200 2345
+Dec 15 09:43:22 webserver01 sshd[2567]: Accepted publickey for user03 from 192.168.1.140 port 22 ssh2
+Dec 15 09:44:30 webserver01 httpd: 203.0.113.200 - - [15/Dec/2023:09:44:30 +0000] "GET /careers.html HTTP/1.1" 200 1234
+Dec 15 09:45:45 firewall kernel: [IPTABLES] ALLOW IN=eth0 SRC=192.168.1.140 DST=10.0.0.1 PROTO=TCP DPT=22
+Dec 15 09:46:12 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:46:12 +0000] "GET /backup/ HTTP/1.1" 404 156
+Dec 15 09:47:30 webserver01 httpd: 203.0.113.10 - - [15/Dec/2023:09:47:30 +0000] "GET /old/ HTTP/1.1" 404 156
+Dec 15 09:48:15 database01 mysqld[5678]: [Warning] Found 1 prepared statements that need(s) to be deallocated
+Dec 15 09:49:22 webserver01 httpd: 192.168.1.110 - - [15/Dec/2023:09:49:22 +0000] "DELETE /api/users/5 HTTP/1.1" 200 0
+Dec 15 09:50:30 webserver01 httpd: 172.16.0.25 - - [15/Dec/2023:09:50:30 +0000] "POST /upload.php HTTP/1.1" 200 234
+Dec 15 09:51:45 webserver01 httpd: 203.0.113.100 - - [15/Dec/2023:09:51:45 +0000] "GET /support.html HTTP/1.1" 200 3456
+Dec 15 09:52:12 firewall kernel: [IPTABLES] DENY IN=eth0 SRC=172.16.0.25 DST=10.0.0.1 PROTO=TCP DPT=135
+Dec 15 09:53:30 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:09:53:30 +0000] "GET /pricing.html HTTP/1.1" 200 2345
+Dec 15 09:54:15 webserver01 httpd: 203.0.113.250 - - [15/Dec/2023:09:54:15 +0000] "GET /admin/login.php HTTP/1.1" 200 856
+Dec 15 09:55:22 webserver01 httpd: 203.0.113.250 - - [15/Dec/2023:09:55:22 +0000] "POST /admin/login.php HTTP/1.1" 403 234
+Dec 15 09:56:30 webserver01 httpd: 203.0.113.250 - - [15/Dec/2023:09:56:30 +0000] "POST /admin/login.php HTTP/1.1" 403 234
+Dec 15 09:57:45 webserver01 httpd: 203.0.113.250 - - [15/Dec/2023:09:57:45 +0000] "POST /admin/login.php HTTP/1.1" 403 234
+Dec 15 09:58:12 database01 mysqld[5678]: [ERROR] Access denied for user 'admin'@'203.0.113.250' (using password: YES)
+Dec 15 09:59:30 webserver01 httpd: 192.168.1.110 - - [15/Dec/2023:09:59:30 +0000] "PUT /api/users/3 HTTP/1.1" 200 345
+Dec 15 10:00:15 webserver01 httpd: 203.0.113.100 - - [15/Dec/2023:10:00:15 +0000] "GET /terms.html HTTP/1.1" 200 1234
