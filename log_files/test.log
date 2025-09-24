@@ -1,0 +1,3 @@
+2025-09-01 07:00:05 INFO File accessed: /var/www/html/admin.php by user 'guest'
+2025-09-01 07:00:30 WARN Failed login attempt for user 'root' from 203.0.113.6
+2025-09-01 07:00:35 ERROR Malware signature detected in file /etc/passwd
