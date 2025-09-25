@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 # logs/views.py
@@ -12,7 +13,7 @@ from .models import LogFile, LogEntry
 from .serializers import LogFileSerializer, LogEntrySerializer
 from .ml_service import LogMLService
 
-
+@csrf_exempt
 @api_view(['POST'])
 def upload_log_file(request):
     """로그 파일 업로드 및 ML 처리"""

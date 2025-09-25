@@ -23,11 +23,19 @@
             border-radius: 0.75rem;
             padding: 1.5rem;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: transform 0.2s ease-in-out;
         }
-        .card:hover {
-            transform: translateY(-5px);
+        /* 버튼에만 hover 효과 */
+        button:hover {
+            background-color: #2563eb;
+            transition: background-color 0.3s ease;
         }
+        /* 분석 모델 카드에 hover 효과 */
+        .analysis-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease;
+        }
+
         .hidden {
             display: none;
         }
@@ -65,7 +73,7 @@
                         <input type="file" id="file-input" class="hidden" required>
                         <label for="file-input" class="cursor-pointer text-blue-600 font-semibold">
                             <i class="fas fa-upload mr-2"></i>
-                            파일을 선택하거나 여기에 드래그 앤 드롭하세요.
+                            <span id="upload-instruction">파일을 선택하거나 여기에 드래그 앤 드롭하세요.</span>
                         </label>
                         <p id="file-name-display" class="mt-2 text-gray-500"></p>
                     </div>
@@ -92,32 +100,56 @@
                 <i class="fas fa-arrow-left mr-2"></i>
                 파일 목록으로 돌아가기
             </button>
-            <div class="card mb-8">
-                <h2 class="text-2xl font-bold text-gray-800">
-                    분석 파일: <span id="selected-file-name" class="text-blue-600"></span>
-                </h2>
-                <p class="mt-2 text-gray-600">아래에서 수행할 분석 모델을 선택하세요.</p>
+
+            <!-- 파일 정보 및 설명 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- 파일 기본 정보 -->
+                <div class="card">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        분석 파일: <span id="selected-file-name" class="text-blue-600"></span>
+                    </h2>
+                    <p class="mt-2 text-gray-600">아래에서 수행할 분석 모델을 선택하세요.</p>
+                </div>
+
+                <!-- 파일 설명 -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">파일 정보</h3>
+                    <div id="file-description">
+                        <p class="text-sm text-gray-600 mb-2">
+                            <strong>로그 유형:</strong> <span id="log-type">보안 이벤트 로그</span>
+                        </p>
+                        <p class="text-sm text-gray-600 mb-2">
+                            <strong>총 로그 수:</strong> <span id="total-logs">106개</span>
+                        </p>
+                        <p class="text-sm text-gray-600 mb-3">
+                            <strong>로그 예제:</strong>
+                        </p>
+                        <div class="bg-gray-100 p-3 rounded text-xs font-mono">
+                            <span id="log-example">Dec 15 08:30:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:30:15 +0000] "GET /admin.php"</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 분석 모델 선택 버튼들 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div onclick="runAnalysis('basic-stats')" class="card text-center cursor-pointer">
+                <div onclick="runAnalysis('basic-stats')" class="card text-center cursor-pointer analysis-card">
                     <i class="fas fa-chart-pie text-3xl text-green-500 mb-3"></i>
                     <h3 class="font-semibold text-lg">기본 통계 분석</h3>
                 </div>
-                <div onclick="runAnalysis('security-threat')" class="card text-center cursor-pointer">
+                <div onclick="runAnalysis('security-threat')" class="card text-center cursor-pointer analysis-card">
                     <i class="fas fa-exclamation-triangle text-3xl text-red-500 mb-3"></i>
                     <h3 class="font-semibold text-lg">보안 위협 분석</h3>
                 </div>
-                <div onclick="runAnalysis('anomaly')" class="card text-center cursor-pointer">
+                <div onclick="runAnalysis('anomaly')" class="card text-center cursor-pointer analysis-card">
                     <i class="fas fa-search text-3xl text-yellow-500 mb-3"></i>
                     <h3 class="font-semibold text-lg">이상 행위 분석</h3>
                 </div>
-                <div onclick="runAnalysis('correlation')" class="card text-center cursor-pointer">
+                <div onclick="runAnalysis('correlation')" class="card text-center cursor-pointer analysis-card">
                     <i class="fas fa-link text-3xl text-purple-500 mb-3"></i>
                     <h3 class="font-semibold text-lg">상관관계 분석</h3>
                 </div>
-                <div onclick="runAnalysis('predictive')" class="card text-center cursor-pointer">
+                <div onclick="runAnalysis('predictive')" class="card text-center cursor-pointer analysis-card">
                     <i class="fas fa-brain text-3xl text-indigo-500 mb-3"></i>
                     <h3 class="font-semibold text-lg">예측 분석</h3>
                 </div>
@@ -132,7 +164,7 @@
         <!-- 페이지 3: 분석 결과 페이지           -->
         <!-- ================================== -->
         <div id="result-page" class="hidden">
-             <button id="back-to-analysis" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
+             <button id="back-to-analysis" onclick="showPage('analysis-page')" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
                 <i class="fas fa-arrow-left mr-2"></i>
                 분석 허브로 돌아가기
             </button>
@@ -175,8 +207,13 @@
                 } else {
                     files.forEach(file => {
                         const fileCard = `
-                            <div class="card cursor-pointer" onclick="selectFile(${file.id}, '${file.name}')">
-                                <div class="flex items-center">
+                            <div class="card cursor-pointer relative" onclick="selectFile(${file.id}, '${file.name}')">
+                                <div class="absolute top-2 right-2">
+                                    <button class="text-red-600 hover:text-red-800 p-1 rounded-full hover:bg-red-100 transition" onclick="event.stopPropagation(); deleteFile(${file.id})">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center pr-8">
                                     <i class="fas fa-file-alt text-2xl text-gray-400 mr-4"></i>
                                     <div>
                                         <h3 class="font-semibold text-gray-800">${file.name}</h3>
@@ -192,6 +229,49 @@
                 console.error('Error fetching files:', error);
                 alert(error.message);
             }
+        }
+
+        // 파일 삭제 함수
+        async function deleteFile(fileId) {
+            if (!confirm('이 파일을 삭제하시겠습니까?')) return;
+
+            try {
+                // CSRF 토큰 가져오기
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value ||
+                                 getCookie('csrftoken');
+
+                const response = await fetch(`${API_BASE_URL}/api/logs/files/${fileId}/delete/`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRFToken': csrfToken,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) throw new Error('파일 삭제에 실패했습니다.');
+
+                alert('파일이 성공적으로 삭제되었습니다.');
+                fetchFiles(); // 파일 목록 새로고침
+            } catch (error) {
+                console.error('Error deleting file:', error);
+                alert(error.message);
+            }
+        }
+
+        // CSRF 토큰 가져오는 함수
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
         }
 
         // 2. 파일 업로드 처리
@@ -272,7 +352,6 @@
                 };
 
                 document.getElementById('result-title').innerText = titleMap[analysisType];
-                // JSON 객체를 보기 좋게 문자열로 변환하여 표시
                 document.getElementById('result-content').innerText = JSON.stringify(result, null, 2);
 
                 showPage('result-page');
@@ -290,19 +369,29 @@
         function selectFile(fileId, fileName) {
             selectedFileId = fileId;
             document.getElementById('selected-file-name').innerText = fileName;
-            // '뒤로가기' 버튼이 분석 허브로 돌아오도록 설정
-            document.getElementById('back-to-analysis').onclick = () => showPage('analysis-page');
+
+            // 파일 정보 업데이트 (임시 데이터)
+            document.getElementById('log-type').innerText = '보안 이벤트 로그';
+            document.getElementById('total-logs').innerText = '106개';
+            document.getElementById('log-example').innerText = 'Dec 15 08:30:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:30:15 +0000] "GET /admin.php"';
+
             showPage('analysis-page');
         }
 
-        // 2. 파일 입력 UI 처리
-        document.getElementById('file-input').addEventListener('change', (event) => {
-            const fileNameDisplay = document.getElementById('file-name-display');
-            if (event.target.files.length > 0) {
-                fileNameDisplay.textContent = event.target.files[0].name;
-            } else {
-                fileNameDisplay.textContent = '';
-            }
+        // 파일 입력 변경 이벤트 처리
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('file-input');
+            const uploadInstruction = document.getElementById('upload-instruction');
+
+            fileInput.addEventListener('change', (event) => {
+                if (event.target.files.length > 0) {
+                    uploadInstruction.style.display = 'none'; // 글씨 숨기기
+                    document.getElementById('file-name-display').innerText = event.target.files[0].name;
+                } else {
+                    uploadInstruction.style.display = 'inline'; // 글씨 보이기
+                    document.getElementById('file-name-display').innerText = '';
+                }
+            });
         });
 
         // --- 초기화 ---
