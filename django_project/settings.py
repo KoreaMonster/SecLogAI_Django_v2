@@ -65,7 +65,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,6 +79,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
+# STATICFILES_DIRS 추가
+STATICFILES_DIRS = [
+    BASE_DIR,  # 최상위 디렉토리
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
