@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     #Local
     'logs.apps.LogsConfig',
     'analysis.apps.AnalysisConfig',
+    #깃허브 배포
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -49,6 +51,14 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.AllowAny",  # 개발 초기에는 허용 -> 나중에 수정할 것
     ]
 }
+
+# CORS 설정
+CORS_ALLOWED_ORIGINS = [
+    "https://koreamonster.github.io",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
+CORS_ALLOW_ALL_ORIGINS = True  # 개발용
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,6 +68,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'django_project.urls'
