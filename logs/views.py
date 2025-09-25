@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 # logs/views.py
@@ -8,11 +7,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+# ⭐️ 1. csrf_exempt를 import 합니다.
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import LogFile, LogEntry
 from .serializers import LogFileSerializer, LogEntrySerializer
 from .ml_service import LogMLService
 
+
+# ⭐️ 2. @csrf_exempt 데코레이터를 @api_view 바로 위에 추가합니다.
 @csrf_exempt
 @api_view(['POST'])
 def upload_log_file(request):
