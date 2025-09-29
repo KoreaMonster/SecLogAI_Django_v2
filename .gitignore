@@ -1,0 +1,58 @@
+# .gitignore
+
+# 환경변수 & 비밀키
+.env
+.env.local
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+/media
+/staticfiles
+
+# ML & Data
+*.db
+*.sqlite
+analyzed_logs.db
+*.pkl
+*.pickle
+*.h5
+*.model
+
+# 데이터 파일
+/data/*.log
+/data/*.csv
+/log_files/
+
+# 가상환경
+venv/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 테스트
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 분석 결과 (필요시 주석 해제)
+# /graphs/
+# *.png

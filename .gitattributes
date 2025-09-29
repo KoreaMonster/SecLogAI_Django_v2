@@ -1,2 +1,27 @@
-# Auto detect text files and perform LF normalization
+# .gitattributes
+
+# Auto normalize line endings
 * text=auto
+
+# Python files
+*.py text eol=lf
+
+# Web files
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+
+# Config files
+*.yml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+.env.example text eol=lf
+
+# Binary files
+*.db binary
+*.sqlite3 binary
+*.pkl binary
+*.png binary
+*.jpg binary
+*.pdf binary

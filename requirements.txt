@@ -1,24 +1,23 @@
-# 로그 분석 시스템 v2.0 의존성 패키지
+# SecLogAI Django v2.0 Requirements
 
-# 데이터 처리 (호환성 보장)
-pandas>=1.3.0,<3.0.0
+# Django
+Django>=5.2.6
+djangorestframework>=3.14.0
+django-cors-headers>=4.3.0
+
+# Data Processing & ML
+pandas>=1.3.0
 numpy>=1.20.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+joblib>=1.3.0
 
-# 시각화
+# Visualization
 matplotlib>=3.7.0
 seaborn>=0.12.0
 
-# 머신러닝 & 과학 계산
-scikit-learn>=1.3.0
-scipy>=1.10.0
+# OpenAI Chatbot
+openai>=1.0.0
 
-# 선택적 의존성 (고급 기능용)
-# plotly>=5.14.0  # 인터랙티브 시각화
-# dash>=2.10.0    # 웹 대시보드
-# streamlit>=1.24.0  # 간단한 웹 UI
-
-# 개발 도구 (개발 환경에서만 필요)
-# pytest>=7.3.0
-# black>=23.3.0
-# flake8>=6.0.0
-# mypy>=1.3.0
+# Utils
+python-dotenv>=1.0.0

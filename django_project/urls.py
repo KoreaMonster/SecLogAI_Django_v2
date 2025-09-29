@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/logs/', include('logs.urls')),
     path('analysis/', include('analysis.urls')),
+    path('chatbot/', include('chatbot.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
 ]
 
