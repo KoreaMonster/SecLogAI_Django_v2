@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecLogAI - MVP</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome 아이콘 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 간단한 커스텀 스타일 */
         body {
-            background-color: #f0f2f5; /* 연한 회색 배경 */
+            background-color: #f0f2f5;
         }
         .main-container {
             max-width: 1200px;
@@ -24,26 +21,95 @@
             padding: 1.5rem;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
-        /* 버튼에만 hover 효과 */
         button:hover {
             background-color: #2563eb;
             transition: background-color 0.3s ease;
         }
-        /* 분석 모델 카드에 hover 효과 */
         .analysis-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
             transition: all 0.3s ease;
         }
-
         .hidden {
             display: none;
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .chatbot-messages {
+            height: 500px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+        .message {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+        .message.user {
+            flex-direction: row-reverse;
+        }
+        .message-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .message.assistant .message-avatar {
+            background-color: #dbeafe;
+            color: #2563eb;
+        }
+        .message.user .message-avatar {
+            background-color: #dcfce7;
+            color: #16a34a;
+        }
+        .message-bubble {
+            max-width: 70%;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            line-height: 1.5;
+        }
+        .message.assistant .message-bubble {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            border-bottom-left-radius: 0.25rem;
+        }
+        .message.user .message-bubble {
+            background-color: #2563eb;
+            color: white;
+            border-bottom-right-radius: 0.25rem;
+        }
+        .typing-indicator {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0.75rem 1rem;
+        }
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #9ca3af;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.7; }
+            30% { transform: translateY(-10px); opacity: 1; }
         }
     </style>
 </head>
 <body class="font-sans">
 
-    <!-- 헤더 -->
     <header class="bg-white shadow-md">
         <nav class="main-container flex justify-between items-center py-4">
             <h1 class="text-2xl font-bold text-gray-800">
@@ -55,17 +121,13 @@
 
     <main class="main-container">
 
-        <!-- 로딩 스피너 -->
         <div id="loading-spinner" class="hidden text-center py-20">
             <i class="fas fa-spinner fa-spin text-blue-600 text-4xl"></i>
-            <p class="mt-4 text-gray-600">분석 중입니다. 잠시만 기다려주세요...</p>
+            <p class="mt-4 text-gray-600">처리 중입니다. 잠시만 기다려주세요...</p>
         </div>
 
-        <!-- ================================== -->
-        <!-- 페이지 1: 메인 대시보드 (홈)         -->
-        <!-- ================================== -->
+        <!-- 홈 페이지 -->
         <div id="home-page">
-            <!-- 로그 파일 업로드 섹션 -->
             <div class="card mb-8">
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">새로운 로그 파일 분석하기</h2>
                 <form id="upload-form">
@@ -83,27 +145,20 @@
                 </form>
             </div>
 
-            <!-- 업로드된 로그 파일 목록 -->
             <div>
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">분석할 로그 파일 선택</h2>
-                <div id="file-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- 자바스크립트로 파일 목록이 여기에 채워집니다. -->
-                </div>
+                <div id="file-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </div>
 
-        <!-- ================================== -->
-        <!-- 페이지 2: 분석 허브                   -->
-        <!-- ================================== -->
+        <!-- 분석 허브 -->
         <div id="analysis-page" class="hidden">
             <button onclick="showPage('home-page')" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
                 <i class="fas fa-arrow-left mr-2"></i>
                 파일 목록으로 돌아가기
             </button>
 
-            <!-- 파일 정보 및 설명 -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                <!-- 파일 기본 정보 -->
                 <div class="card">
                     <h2 class="text-2xl font-bold text-gray-800">
                         분석 파일: <span id="selected-file-name" class="text-blue-600"></span>
@@ -111,7 +166,6 @@
                     <p class="mt-2 text-gray-600">아래에서 수행할 분석 모델을 선택하세요.</p>
                 </div>
 
-                <!-- 파일 설명 -->
                 <div class="card">
                     <h3 class="text-lg font-semibold text-gray-700 mb-3">파일 정보</h3>
                     <div id="file-description">
@@ -131,7 +185,6 @@
                 </div>
             </div>
 
-            <!-- 분석 모델 선택 버튼들 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div onclick="runAnalysis('basic-stats')" class="card text-center cursor-pointer analysis-card">
                     <i class="fas fa-chart-pie text-3xl text-green-500 mb-3"></i>
@@ -153,18 +206,16 @@
                     <i class="fas fa-brain text-3xl text-indigo-500 mb-3"></i>
                     <h3 class="font-semibold text-lg">예측 분석</h3>
                 </div>
-                <div class="card text-center bg-gray-100 cursor-not-allowed">
-                    <i class="fas fa-plus text-3xl text-gray-400 mb-3"></i>
-                    <h3 class="font-semibold text-lg text-gray-500">(추가될 모델)</h3>
+                <div onclick="openChatbot()" class="card text-center cursor-pointer analysis-card">
+                    <i class="fas fa-robot text-3xl text-cyan-500 mb-3"></i>
+                    <h3 class="font-semibold text-lg">AI ChatBot</h3>
                 </div>
             </div>
         </div>
 
-        <!-- ================================== -->
-        <!-- 페이지 3: 분석 결과 페이지           -->
-        <!-- ================================== -->
+        <!-- 분석 결과 -->
         <div id="result-page" class="hidden">
-             <button id="back-to-analysis" onclick="showPage('analysis-page')" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
+            <button id="back-to-analysis" onclick="showPage('analysis-page')" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
                 <i class="fas fa-arrow-left mr-2"></i>
                 분석 허브로 돌아가기
             </button>
@@ -173,15 +224,62 @@
                 <pre id="result-content" class="whitespace-pre-wrap bg-gray-100 p-4 rounded-lg font-mono text-sm"></pre>
             </div>
         </div>
+
+        <!-- Chatbot 페이지 -->
+        <div id="chatbot-page" class="hidden">
+            <button onclick="showPage('analysis-page')" class="mb-6 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition">
+                <i class="fas fa-arrow-left mr-2"></i>
+                분석 허브로 돌아가기
+            </button>
+
+            <div class="chatbot-container">
+                <div class="card mb-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-robot text-3xl text-cyan-500"></i>
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800">AI 보안 분석 어시스턴트</h2>
+                            <p class="text-sm text-gray-600">파일: <span id="chatbot-file-name">--</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card chatbot-messages" id="chatbot-messages">
+                    <div class="message assistant">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-bubble">
+                            <p>안녕하세요! 저는 보안 로그 분석 전문 AI 어시스턴트입니다. 로그 데이터에 대해 무엇이든 물어보세요!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <form id="chatbot-form" class="flex gap-3">
+                        <input
+                            type="text"
+                            id="chatbot-input"
+                            class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                            placeholder="메시지를 입력하세요..."
+                            autocomplete="off"
+                            required
+                        >
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script>
-        // --- 전역 변수 및 설정 ---
-        const API_BASE_URL = 'http://127.0.0.1:8000'; // Django 서버 주소
-        let selectedFileId = null; // 사용자가 선택한 파일의 ID
+        const API_BASE_URL = 'http://127.0.0.1:8000';
+        let selectedFileId = null;
+        let selectedFileName = null;
+        let chatSessionId = null;
 
-        // --- 페이지 네비게이션 관리 ---
-        const pages = ['home-page', 'analysis-page', 'result-page', 'loading-spinner'];
+        const pages = ['home-page', 'analysis-page', 'result-page', 'chatbot-page', 'loading-spinner'];
 
         function showPage(pageId) {
             pages.forEach(id => {
@@ -190,9 +288,6 @@
             document.getElementById(pageId).classList.remove('hidden');
         }
 
-        // --- API 호출 함수 ---
-
-        // 1. 업로드된 파일 목록 가져오기
         async function fetchFiles() {
             try {
                 const response = await fetch(`${API_BASE_URL}/api/logs/files/`);
@@ -200,7 +295,7 @@
 
                 const files = await response.json();
                 const fileListElement = document.getElementById('file-list');
-                fileListElement.innerHTML = ''; // 목록 초기화
+                fileListElement.innerHTML = '';
 
                 if (files.length === 0) {
                     fileListElement.innerHTML = `<p class="text-gray-500 col-span-full text-center">업로드된 파일이 없습니다. 새 로그 파일을 업로드해주세요.</p>`;
@@ -231,14 +326,11 @@
             }
         }
 
-        // 파일 삭제 함수
         async function deleteFile(fileId) {
             if (!confirm('이 파일을 삭제하시겠습니까?')) return;
 
             try {
-                // CSRF 토큰 가져오기
-                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value ||
-                                 getCookie('csrftoken');
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value || getCookie('csrftoken');
 
                 const response = await fetch(`${API_BASE_URL}/api/logs/files/${fileId}/delete/`, {
                     method: 'DELETE',
@@ -251,14 +343,13 @@
                 if (!response.ok) throw new Error('파일 삭제에 실패했습니다.');
 
                 alert('파일이 성공적으로 삭제되었습니다.');
-                fetchFiles(); // 파일 목록 새로고침
+                fetchFiles();
             } catch (error) {
                 console.error('Error deleting file:', error);
                 alert(error.message);
             }
         }
 
-        // CSRF 토큰 가져오는 함수
         function getCookie(name) {
             let cookieValue = null;
             if (document.cookie && document.cookie !== '') {
@@ -274,7 +365,6 @@
             return cookieValue;
         }
 
-        // 2. 파일 업로드 처리
         async function uploadFile(event) {
             event.preventDefault();
             const fileInput = document.getElementById('file-input');
@@ -291,8 +381,13 @@
             showPage('loading-spinner');
 
             try {
+                const csrfToken = getCookie('csrftoken');
+
                 const response = await fetch(`${API_BASE_URL}/api/logs/upload/`, {
                     method: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrfToken
+                    },
                     body: formData,
                 });
 
@@ -301,9 +396,8 @@
                 const result = await response.json();
                 alert(`파일 업로드 및 처리 성공!\n- 처리된 로그: ${result.processed_entries}개`);
 
-                // 업로드 성공 후, 해당 파일의 분석 페이지로 바로 이동
                 selectFile(result.log_file_id, file.name);
-                fetchFiles(); // 파일 목록 갱신
+                fetchFiles();
 
             } catch (error) {
                 console.error('Error uploading file:', error);
@@ -312,20 +406,18 @@
             }
         }
 
-        // 3. 분석 실행
         async function runAnalysis(analysisType) {
             if (!selectedFileId) {
                 alert('분석할 파일이 선택되지 않았습니다.');
                 return;
             }
 
-            // 분석 API 엔드포인트 매핑
             const analysisEndpoints = {
-                'basic-stats': `${API_BASE_URL}/analysis/basic-stats/`,
-                'security-threat': `${API_BASE_URL}/analysis/security-threat/`,
-                'anomaly': `${API_BASE_URL}/analysis/anomaly/`,
-                'correlation': `${API_BASE_URL}/analysis/correlation/`,
-                'predictive': `${API_BASE_URL}/analysis/predictive/`,
+                'basic-stats': `${API_BASE_URL}/api/analysis/basic-stats/`,
+                'security-threat': `${API_BASE_URL}/api/analysis/security-threat/`,
+                'anomaly': `${API_BASE_URL}/api/analysis/anomaly/`,
+                'correlation': `${API_BASE_URL}/api/analysis/correlation/`,
+                'predictive': `${API_BASE_URL}/api/analysis/predictive/`,
             };
 
             const url = analysisEndpoints[analysisType];
@@ -342,7 +434,6 @@
 
                 const result = await response.json();
 
-                // 결과 페이지 채우기
                 const titleMap = {
                     'basic-stats': '기본 통계 분석 결과',
                     'security-threat': '보안 위협 분석 결과',
@@ -359,18 +450,15 @@
             } catch (error) {
                 console.error('Error running analysis:', error);
                 alert(error.message);
-                showPage('analysis-page'); // 실패 시 분석 허브 페이지로 복귀
+                showPage('analysis-page');
             }
         }
 
-        // --- 페이지 이벤트 및 핸들러 ---
-
-        // 1. 파일 선택
         function selectFile(fileId, fileName) {
             selectedFileId = fileId;
+            selectedFileName = fileName;
             document.getElementById('selected-file-name').innerText = fileName;
 
-            // 파일 정보 업데이트 (임시 데이터)
             document.getElementById('log-type').innerText = '보안 이벤트 로그';
             document.getElementById('total-logs').innerText = '106개';
             document.getElementById('log-example').innerText = 'Dec 15 08:30:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:30:15 +0000] "GET /admin.php"';
@@ -378,27 +466,157 @@
             showPage('analysis-page');
         }
 
-        // 파일 입력 변경 이벤트 처리
+        // Chatbot 열기
+        function openChatbot() {
+            if (!selectedFileId) {
+                alert('챗봇을 사용하려면 먼저 파일을 선택해주세요.');
+                return;
+            }
+
+            document.getElementById('chatbot-file-name').innerText = selectedFileName || '알 수 없음';
+
+            // 챗봇 메시지 초기화 (환영 메시지만 남김)
+            const chatMessages = document.getElementById('chatbot-messages');
+            chatMessages.innerHTML = `
+                <div class="message assistant">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-bubble">
+                        <p>안녕하세요! 저는 보안 로그 분석 전문 AI 어시스턴트입니다. 로그 데이터에 대해 무엇이든 물어보세요!</p>
+                    </div>
+                </div>
+            `;
+
+            chatSessionId = null;
+            showPage('chatbot-page');
+        }
+
+        // Chatbot 메시지 전송
+        async function sendChatMessage(event) {
+            event.preventDefault();
+
+            const input = document.getElementById('chatbot-input');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // 사용자 메시지 표시
+            addChatMessage('user', message);
+            input.value = '';
+
+            // 타이핑 인디케이터 표시
+            showTypingIndicator();
+
+            try {
+                const csrfToken = getCookie('csrftoken');
+                const response = await fetch(`${API_BASE_URL}/api/chatbot/message/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        session_id: chatSessionId,
+                        log_file_id: selectedFileId
+                    })
+                });
+
+                if (!response.ok) throw new Error('챗봇 응답 실패');
+
+                const result = await response.json();
+
+                // 세션 ID 저장
+                if (!chatSessionId) {
+                    chatSessionId = result.session_id;
+                }
+
+                // 타이핑 인디케이터 제거
+                hideTypingIndicator();
+
+                // AI 응답 표시
+                addChatMessage('assistant', result.assistant_message);
+
+            } catch (error) {
+                console.error('Chatbot error:', error);
+                hideTypingIndicator();
+                addChatMessage('assistant', '죄송합니다. 오류가 발생했습니다. 다시 시도해주세요.');
+            }
+        }
+
+        function addChatMessage(role, content) {
+            const chatMessages = document.getElementById('chatbot-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+
+            const avatarIcon = role === 'user' ? 'fa-user' : 'fa-robot';
+
+            messageDiv.innerHTML = `
+                <div class="message-avatar">
+                    <i class="fas ${avatarIcon}"></i>
+                </div>
+                <div class="message-bubble">
+                    <p>${escapeHtml(content)}</p>
+                </div>
+            `;
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const chatMessages = document.getElementById('chatbot-messages');
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typing-indicator';
+            typingDiv.className = 'message assistant';
+            typingDiv.innerHTML = `
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-bubble">
+                    <div class="typing-indicator">
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) {
+                indicator.remove();
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const fileInput = document.getElementById('file-input');
             const uploadInstruction = document.getElementById('upload-instruction');
 
             fileInput.addEventListener('change', (event) => {
                 if (event.target.files.length > 0) {
-                    uploadInstruction.style.display = 'none'; // 글씨 숨기기
+                    uploadInstruction.style.display = 'none';
                     document.getElementById('file-name-display').innerText = event.target.files[0].name;
                 } else {
-                    uploadInstruction.style.display = 'inline'; // 글씨 보이기
+                    uploadInstruction.style.display = 'inline';
                     document.getElementById('file-name-display').innerText = '';
                 }
             });
-        });
 
-        // --- 초기화 ---
-        document.addEventListener('DOMContentLoaded', () => {
             showPage('home-page');
             fetchFiles();
             document.getElementById('upload-form').addEventListener('submit', uploadFile);
+            document.getElementById('chatbot-form').addEventListener('submit', sendChatMessage);
         });
     </script>
 </body>
