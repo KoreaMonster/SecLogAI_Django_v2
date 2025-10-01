@@ -118,32 +118,25 @@ class ChatbotService:
     def handle_required_action(self, run, thread_id):
         """
         Function 호출 요청 처리
-
-        Args:
-            run: Run 객체 (required_action 포함)
-            thread_id: Thread ID (metadata에서 session_id 추출용)
-
-        Returns:
-            tool_outputs: Function 실행 결과 리스트
         """
         tool_outputs = []
         tool_calls = run.required_action.submit_tool_outputs.tool_calls
 
-        # Thread metadata에서 session_id 가져오기
+        # ✨ Thread metadata에서 session_id 가져오기
         thread = self.client.beta.threads.retrieve(thread_id)
-        session_id = thread.metadata.get("session_id")
+        real_session_id = thread.metadata.get("session_id")
 
-        if not session_id:
+        if not real_session_id:
             logger.warning("⚠️ Thread metadata에 session_id가 없습니다")
 
         for tool_call in tool_calls:
             function_name = tool_call.function.name
             function_args = json.loads(tool_call.function.arguments)
 
-            # session_id를 자동으로 주입
-            if session_id and "session_id" not in function_args:
-                function_args["session_id"] = session_id
-                logger.info(f"📌 session_id 자동 주입: {session_id[:8]}...")
+            # ✨ Assistant가 제공한 session_id 무시하고 실제 session_id 사용
+            if real_session_id:
+                function_args["session_id"] = real_session_id
+                logger.info(f"📌 실제 session_id 사용: {real_session_id[:8]}...")
 
             logger.info(f"🔧 Function 호출: {function_name}, 파라미터: {function_args}")
 
@@ -160,6 +153,7 @@ class ChatbotService:
             })
 
         return tool_outputs
+
 
     def submit_tool_outputs(self, thread_id, run_id, tool_outputs):
         """
@@ -394,9 +388,7 @@ class ChatbotService:
         """
         try:
             # 1. Thread 생성 또는 재사용
-            if not thread_id:
-                thread_id = self.create_thread(session_id)
-                logger.info(f"✅ 새 Thread 생성: {thread_id}")
+            logger.info(f"✅ 기존 Thread 사용: {thread_id}")
 
             # 2. 메시지 추가
             self.send_message(thread_id, user_message)

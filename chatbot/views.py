@@ -24,16 +24,12 @@ class ChatMessageView(APIView):
     """
 
     def post(self, request):
-        """
-        사용자 메시지를 받아서 GPT 응답 반환
-        """
+        """사용자 메시지를 받아서 GPT 응답 반환"""
+
         # 1. 입력 데이터 검증
         serializer = ChatRequestSerializer(data=request.data)
         if not serializer.is_valid():
-            return Response(
-                serializer.errors,
-                status=status.HTTP_400_BAD_REQUEST
-            )
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         # 2. 데이터 추출
         user_message = serializer.validated_data['message']
@@ -49,20 +45,31 @@ class ChatMessageView(APIView):
             session = get_object_or_404(ChatSession, id=session_id)
             thread_id = session.thread_id
         else:
-            # 새 세션 생성 (임시, thread_id는 나중에 업데이트)
+            # ✨ 새 세션 생성 (수정된 부분)
+            # 1단계: Thread 먼저 생성
+            temp_thread_id = chatbot_service.create_thread()
+
+            # 2단계: 세션 생성
             session = ChatSession.objects.create(
-                thread_id="temp",  # 임시값
+                thread_id=temp_thread_id,
                 log_file_id=log_file_id
             )
-            thread_id = None
+
+            # 3단계: Thread metadata 업데이트
+            chatbot_service.client.beta.threads.update(
+                temp_thread_id,
+                metadata={"session_id": str(session.id)}
+            )
+
+            thread_id = temp_thread_id
             session_id = session.id
 
-        # 5. GPT에게 메시지 보내고 응답 받기 (session_id 전달!)
+        # 5. GPT에게 메시지 보내고 응답 받기
         try:
-            assistant_response, thread_id = chatbot_service.chat(
+            assistant_response, _ = chatbot_service.chat(
                 user_message=user_message,
                 thread_id=thread_id,
-                session_id=str(session_id)  # ✨ session_id 전달
+                session_id=str(session_id)
             )
         except Exception as e:
             return Response(
@@ -70,12 +77,7 @@ class ChatMessageView(APIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
-        # 6. 새 thread_id면 세션 업데이트
-        if session.thread_id == "temp":
-            session.thread_id = thread_id
-            session.save()
-
-        # 7. 메시지 저장 (사용자 + AI)
+        # 6. 메시지 저장 (사용자 + AI)
         ChatMessage.objects.create(
             session=session,
             role='user',
@@ -87,6 +89,15 @@ class ChatMessageView(APIView):
             role='assistant',
             content=assistant_response
         )
+
+        # 7. 응답 반환
+        response_data = {
+            'session_id': session.id,
+            'thread_id': session.thread_id,
+            'user_message': user_message,
+            'assistant_message': assistant_response,
+            'timestamp': assistant_msg.timestamp
+        }
 
         # 8. 응답 반환
         response_data = {
