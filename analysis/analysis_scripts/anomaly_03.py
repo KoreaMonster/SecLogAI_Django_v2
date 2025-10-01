@@ -381,3 +381,35 @@ class AnomalyAnalyzer:
 Django ORM 기반 이상 탐지
 """
         return report
+
+    def save_to_db(self, log_file):
+        """이상 행위 분석 결과를 DB에 저장"""
+        from analysis.models import AnalysisResult
+
+        if len(self.df) == 0:
+            return
+
+        volume_anomalies, _ = self.detect_volume_anomalies()
+        behavioral_anomalies, _ = self.detect_behavioral_anomalies()
+        time_anomalies, _ = self.detect_time_anomalies()
+
+        result_dict = {
+            'total_logs': len(self.df),
+            'volume_anomaly_count': len(volume_anomalies),
+            'behavioral_anomaly_count': len(behavioral_anomalies),
+            'time_anomaly_count': len(time_anomalies),
+            'total_anomalies': len(volume_anomalies) + len(behavioral_anomalies) + len(time_anomalies),
+            'top_anomalies': [
+                {
+                    'type': anomaly.get('type', 'unknown'),
+                    'description': str(anomaly)[:100]
+                }
+                for anomaly in (volume_anomalies[:3] + behavioral_anomalies[:3])
+            ]
+        }
+
+        AnalysisResult.objects.update_or_create(
+            log_file=log_file,
+            analysis_type='anomaly',
+            defaults={'result_data': result_dict}
+        )

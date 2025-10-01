@@ -400,3 +400,32 @@ class CorrelationAnalyzer:
 Django ORM 기반 상관관계 분석
 """
         return report
+
+    def save_to_db(self, log_file):
+        """상관관계 분석 결과를 DB에 저장"""
+        from analysis.models import AnalysisResult
+
+        if len(self.df) == 0:
+            return
+
+        temporal_data, _ = self.analyze_temporal_correlation()
+        ip_data, _ = self.analyze_ip_clustering()
+        attack_data, _ = self.analyze_attack_sequences()
+
+        result_dict = {
+            'total_logs': len(self.df),
+            'strong_correlations': len(temporal_data.get('strong_correlations', [])),
+            'ip_clusters': len(ip_data.get('clusters', {})),
+            'attack_sequences': len(attack_data.get('all_sequences', [])),
+            'correlation_summary': {
+                'correlations_found': len(temporal_data.get('strong_correlations', [])),
+                'clusters_found': len(ip_data.get('clusters', {})),
+                'sequences_found': len(attack_data.get('all_sequences', []))
+            }
+        }
+
+        AnalysisResult.objects.update_or_create(
+            log_file=log_file,
+            analysis_type='correlation',
+            defaults={'result_data': result_dict}
+        )

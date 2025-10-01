@@ -13,34 +13,41 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import LogFile, LogEntry
 from .serializers import LogFileSerializer, LogEntrySerializer
 from .ml_service import LogMLService
+from .analysis_service import AutoAnalysisService
 
 
-# ⭐️ 2. @csrf_exempt 데코레이터를 @api_view 바로 위에 추가합니다.
 @csrf_exempt
 @api_view(['POST'])
 def upload_log_file(request):
-    """로그 파일 업로드 및 ML 처리"""
+    """로그 파일 업로드 및 ML 처리 + 자동 분석"""
     serializer = LogFileSerializer(data=request.data)
 
     if serializer.is_valid():
-        # 파일 저장
+        # 1. 파일 저장
         log_file = serializer.save()
 
-        # ML 처리 시작
+        # 2. ML 처리 시작
         try:
             ml_service = LogMLService()
             processed, failed = ml_service.process_uploaded_file(log_file)
 
+            # ✨ 3. 자동 분석 실행 및 저장 (추가됨!)
+            analysis_service = AutoAnalysisService()
+            analysis_results = analysis_service.run_all_analyses(log_file)
+
             return Response({
-                'message': 'File uploaded and processed successfully',
+                'message': 'File uploaded, processed and analyzed successfully',
                 'log_file_id': log_file.id,
                 'processed_entries': processed,
-                'failed_entries': failed
+                'failed_entries': failed,
+                'analysis_completed': analysis_results['success'],  # ✨ 추가
+                'analysis_total': analysis_results['total'],  # ✨ 추가
+                'analysis_details': analysis_results['details']  # ✨ 추가
             }, status=status.HTTP_201_CREATED)
 
         except Exception as e:
             return Response({
-                'error': f'ML processing failed: {str(e)}'
+                'error': f'Processing failed: {str(e)}'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

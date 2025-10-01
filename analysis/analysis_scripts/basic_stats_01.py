@@ -237,3 +237,29 @@ class BasicStatsAnalyzer:
 Django ORM 기반 분석
 """
         return report
+
+    def save_to_db(self, log_file):
+        """기본 통계 분석 결과를 DB에 저장"""
+        from analysis.models import AnalysisResult
+
+        if len(self.df) == 0:
+            return
+
+        # 분석 결과 딕셔너리 생성
+        result_dict = {
+            'total_logs': len(self.df),
+            'unique_ips': int(self.df['source_ip'].dropna().nunique()),
+            'log_types': int(self.df['log_type'].nunique()),
+            'severity_distribution': self.df['severity'].value_counts().to_dict(),
+            'log_type_distribution': self.df['log_type'].value_counts().to_dict(),
+            'hourly_distribution': self.df[
+                'hour'].value_counts().sort_index().to_dict() if 'hour' in self.df.columns else {},
+            'top_ips': self.df['source_ip'].value_counts().head(10).to_dict(),
+        }
+
+        # DB에 저장 (있으면 업데이트)
+        AnalysisResult.objects.update_or_create(
+            log_file=log_file,
+            analysis_type='basic_stats',
+            defaults={'result_data': result_dict}
+        )

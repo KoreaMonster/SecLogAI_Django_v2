@@ -447,3 +447,37 @@ class PredictiveAnalyzer:
 Django ORM 기반 예측 분석
 """
         return report
+
+    def save_to_db(self, log_file):
+        """예측 분석 결과를 DB에 저장"""
+        from analysis.models import AnalysisResult
+
+        if len(self.df) == 0:
+            return
+
+        traffic_data, _ = self.predict_traffic_volume()
+        threat_data, _ = self.predict_security_threats()
+        load_data, _ = self.predict_system_load()
+
+        result_dict = {
+            'total_logs': len(self.df),
+            'traffic_prediction': {
+                'current_average': traffic_data.get('current_average', 0),
+                'predicted_average': traffic_data.get('predicted_average', 0),
+                'trend': traffic_data.get('trend', 'unknown')
+            },
+            'threat_prediction': {
+                'threat_ips_count': len(threat_data.get('threat_ips', [])),
+                'total_analyzed': threat_data.get('total_analyzed', 0)
+            },
+            'load_prediction': {
+                'load_level': load_data.get('load_prediction', 'unknown'),
+                'average_load': load_data.get('average_load', 0)
+            }
+        }
+
+        AnalysisResult.objects.update_or_create(
+            log_file=log_file,
+            analysis_type='predictive',
+            defaults={'result_data': result_dict}
+        )

@@ -261,7 +261,7 @@ class ChatbotService:
 
     def _fetch_analysis_from_db(self, session_id):
         """
-        Django ORM으로 분석 결과 조회
+        Django ORM으로 분석 결과 조회 (저장된 결과 사용)
 
         Args:
             session_id: 조회할 세션 UUID (문자열)
@@ -270,6 +270,9 @@ class ChatbotService:
             JSON 문자열
         """
         try:
+            # Django 모델 import
+            from analysis.models import AnalysisResult
+
             # 세션 조회
             session = ChatSession.objects.get(id=session_id)
             logger.info(f"📊 세션 조회 성공: {session_id[:8]}...")
@@ -280,48 +283,69 @@ class ChatbotService:
                     "error": "로그 파일이 업로드되지 않은 세션입니다."
                 })
 
-            # 간단한 통계 분석 (AnalysisResult 모델이 없으므로 즉석 분석)
-            log_entries = LogEntry.objects.filter(log_file=session.log_file)
+            # 저장된 분석 결과 조회
+            try:
+                basic_stats = AnalysisResult.objects.get(
+                    log_file=session.log_file,
+                    analysis_type='basic_stats'
+                )
+                security_threat = AnalysisResult.objects.get(
+                    log_file=session.log_file,
+                    analysis_type='security_threat'
+                )
+                anomaly = AnalysisResult.objects.get(
+                    log_file=session.log_file,
+                    analysis_type='anomaly'
+                )
+            except AnalysisResult.DoesNotExist:
+                return json.dumps({
+                    "error": "분석이 아직 완료되지 않았습니다. 잠시 후 다시 시도해주세요."
+                })
 
-            total_logs = log_entries.count()
-            high_severity = log_entries.filter(severity='high').count()
-            medium_severity = log_entries.filter(severity='medium').count()
-            low_severity = log_entries.filter(severity='low').count()
+            # 저장된 데이터에서 정보 추출
+            basic_data = basic_stats.result_data
+            security_data = security_threat.result_data
+            anomaly_data = anomaly.result_data
 
-            # 로그 타입별 집계
-            log_types = {}
-            for entry in log_entries.values('log_type').distinct():
-                log_type = entry['log_type']
-                count = log_entries.filter(log_type=log_type).count()
-                log_types[log_type] = count
-
-            # 상위 IP 주소
-            top_ips = {}
-            for entry in log_entries.values('source_ip').distinct()[:10]:
-                ip = entry['source_ip']
-                if ip:
-                    count = log_entries.filter(source_ip=ip).count()
-                    top_ips[ip] = count
-
+            # 통합 결과 생성
             result = {
-                "summary": f"총 {total_logs}개의 로그가 분석되었습니다.",
-                "severity_distribution": {
-                    "high": high_severity,
-                    "medium": medium_severity,
-                    "low": low_severity
+                "summary": f"총 {basic_data.get('total_logs', 0)}개의 로그가 분석되었습니다.",
+                "severity_distribution": basic_data.get('severity_distribution', {}),
+                "log_types": basic_data.get('log_type_distribution', {}),
+                "top_ips": basic_data.get('top_ips', {}),
+                "security_analysis": {
+                    "high_severity_count": security_data.get('high_severity_count', 0),
+                    "threat_patterns": security_data.get('threat_patterns', {}),
+                    "suspicious_ip_count": security_data.get('suspicious_ip_count', 0)
                 },
-                "log_types": log_types,
-                "top_ips": top_ips,
+                "anomaly_analysis": {
+                    "total_anomalies": anomaly_data.get('total_anomalies', 0),
+                    "volume_anomalies": anomaly_data.get('volume_anomaly_count', 0),
+                    "behavioral_anomalies": anomaly_data.get('behavioral_anomaly_count', 0)
+                },
                 "recommendations": []
             }
 
-            # 위협 판단
-            if high_severity > 0:
+            # 위협 판단 및 권고사항
+            high_count = security_data.get('high_severity_count', 0)
+            if high_count > 0:
                 result["recommendations"].append(
-                    f"⚠️ {high_severity}개의 high severity 로그가 발견되었습니다. 즉시 확인이 필요합니다."
+                    f"⚠️ {high_count}개의 high severity 로그가 발견되었습니다. 즉시 확인이 필요합니다."
                 )
 
-            logger.info(f"✅ 분석 결과 조회 완료")
+            suspicious_count = security_data.get('suspicious_ip_count', 0)
+            if suspicious_count > 0:
+                result["recommendations"].append(
+                    f"🚨 {suspicious_count}개의 의심스러운 IP가 탐지되었습니다."
+                )
+
+            anomaly_count = anomaly_data.get('total_anomalies', 0)
+            if anomaly_count > 0:
+                result["recommendations"].append(
+                    f"🔍 {anomaly_count}개의 이상 행위가 감지되었습니다."
+                )
+
+            logger.info(f"✅ 분석 결과 조회 완료 (저장된 데이터)")
             return json.dumps(result, ensure_ascii=False)
 
         except ChatSession.DoesNotExist:

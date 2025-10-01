@@ -326,3 +326,37 @@ class SecurityThreatAnalyzer:
 Django ORM 기반 보안 분석
 """
         return report
+
+    def save_to_db(self, log_file):
+        """보안 위협 분석 결과를 DB에 저장"""
+        from analysis.models import AnalysisResult
+
+        if len(self.df) == 0:
+            return
+
+        # 위협 패턴 탐지
+        threats = self.detect_threat_patterns()
+        suspicious_ips = self.detect_suspicious_ips()
+
+        result_dict = {
+            'total_logs': len(self.df),
+            'high_severity_count': len(self.df[self.df['severity'] == 'high']),
+            'unique_ips': int(self.df['source_ip'].dropna().nunique()),
+            'threat_patterns': {k: len(v) for k, v in threats.items()},
+            'suspicious_ip_count': len(suspicious_ips),
+            'top_suspicious_ips': [
+                {
+                    'ip': ip_info['ip'],
+                    'total_requests': ip_info['total_requests'],
+                    'high_severity_events': ip_info['high_severity_events'],
+                    'pattern_matches': ip_info['pattern_matches']
+                }
+                for ip_info in suspicious_ips[:5]
+            ]
+        }
+
+        AnalysisResult.objects.update_or_create(
+            log_file=log_file,
+            analysis_type='security_threat',
+            defaults={'result_data': result_dict}
+        )
