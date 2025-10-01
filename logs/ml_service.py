@@ -432,9 +432,17 @@ class LogMLService:
         """처리 통계 조회"""
         entries = LogEntry.objects.filter(log_file=log_file_instance)
 
+        # log_type별 카운트 집계
+        log_type_counts = entries.values('log_type').annotate(count=models.Count('id'))
+        log_type_distribution = {item['log_type']: item['count'] for item in log_type_counts}
+
+        # severity별 카운트 집계
+        severity_counts = entries.values('severity').annotate(count=models.Count('id'))
+        severity_distribution = {item['severity']: item['count'] for item in severity_counts}
+
         return {
             'total_entries': entries.count(),
-            'log_types': dict(entries.values_list('log_type').annotate(count=models.Count('log_type'))),
-            'severities': dict(entries.values_list('severity').annotate(count=models.Count('severity'))),
+            'log_type_distribution': log_type_distribution,
+            'severity_distribution': severity_distribution,
             'unique_ips': entries.values('source_ip').distinct().count()
         }

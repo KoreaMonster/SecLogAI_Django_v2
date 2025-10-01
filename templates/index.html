@@ -326,6 +326,44 @@
             }
         }
 
+        async function loadFileInfo(fileId) {
+            try {
+                showPage('loading-spinner');
+
+                // 파일 상세 정보 가져오기
+                const response = await fetch(`${API_BASE_URL}/api/logs/files/${fileId}/`);
+                if (!response.ok) throw new Error('파일 정보 로드 실패');
+
+                const data = await response.json();
+                const stats = data.stats;
+
+                // 로그 유형 표시
+                const logTypes = Object.keys(stats.log_type_distribution || {});
+                document.getElementById('log-type').innerText =
+                    logTypes.length > 0 ? logTypes.join(', ') : '알 수 없음';
+
+                // 총 로그 수 표시
+                document.getElementById('total-logs').innerText =
+                    `${stats.total_entries || 0}개`;
+
+                // 로그 예제 가져오기
+                const previewResponse = await fetch(`${API_BASE_URL}/api/logs/files/${fileId}/preview/`);
+                if (previewResponse.ok) {
+                    const previewData = await previewResponse.json();
+                    if (previewData.preview && previewData.preview.length > 0) {
+                        document.getElementById('log-example').innerText =
+                            previewData.preview[0].raw_log || '예제 없음';
+                    } else {
+                        document.getElementById('log-example').innerText = '예제 없음';
+                    }
+                }
+
+            } catch (error) {
+                console.error('파일 정보 로드 오류:', error);
+                alert('파일 정보를 불러오는 데 실패했습니다.');
+                showPage('home-page');
+            }
+        }
         async function deleteFile(fileId) {
             if (!confirm('이 파일을 삭제하시겠습니까?')) return;
 
@@ -443,8 +481,50 @@
                 };
 
                 document.getElementById('result-title').innerText = titleMap[analysisType];
-                document.getElementById('result-content').innerText = JSON.stringify(result, null, 2);
 
+                // 분석 결과를 사람이 읽기 좋게 포맷팅
+                let formattedText = '';
+
+                if (analysisType === 'basic-stats') {
+                    formattedText = `${result.overview || ''}\n\n${result.time_analysis || ''}`;
+                } else if (analysisType === 'security-threat') {
+                    formattedText = `${result.overview || ''}\n\n`;
+                    if (result.threat_patterns) {
+                        formattedText += `🚨 위협 패턴 요약:\n`;
+                        for (const [key, value] of Object.entries(result.threat_patterns)) {
+                            formattedText += `  - ${key}: ${value}건\n`;
+                        }
+                    }
+                    if (result.suspicious_ips && result.suspicious_ips.length > 0) {
+                        formattedText += `\n⚠️ 의심스러운 IP (상위 5개):\n`;
+                        result.suspicious_ips.forEach((ip, index) => {
+                            formattedText += `  ${index + 1}. ${ip.ip || ip}: ${ip.count || ip.threat_score}건\n`;
+                        });
+                    }
+                } else if (analysisType === 'anomaly') {
+                    formattedText = `${result.overview || ''}\n\n`;
+                    formattedText += `${result.volume_summary || ''}\n\n`;
+                    formattedText += `${result.behavioral_summary || ''}\n\n`;
+                    formattedText += `총 이상 항목: ${result.total_anomalies || 0}건`;
+                } else if (analysisType === 'correlation') {
+                    formattedText = `${result.overview || ''}\n\n`;
+                    formattedText += `${result.temporal_summary || ''}\n\n`;
+                    if (result.strong_correlations && result.strong_correlations.length > 0) {
+                        formattedText += `강한 상관관계 발견:\n`;
+                        result.strong_correlations.forEach(corr => {
+                            formattedText += `  - ${corr.description || JSON.stringify(corr)}\n`;
+                        });
+                    }
+                } else if (analysisType === 'predictive') {
+                    formattedText = `${result.overview || ''}\n\n`;
+                    formattedText += `${result.traffic_summary || ''}\n\n`;
+                    formattedText += `${result.threat_summary || ''}`;
+                } else {
+                    // 기본: JSON 포맷으로 표시
+                    formattedText = JSON.stringify(result, null, 2);
+                }
+
+                document.getElementById('result-content').innerText = formattedText;
                 showPage('result-page');
 
             } catch (error) {
@@ -454,14 +534,13 @@
             }
         }
 
-        function selectFile(fileId, fileName) {
+        async function selectFile(fileId, fileName) {
             selectedFileId = fileId;
             selectedFileName = fileName;
             document.getElementById('selected-file-name').innerText = fileName;
 
-            document.getElementById('log-type').innerText = '보안 이벤트 로그';
-            document.getElementById('total-logs').innerText = '106개';
-            document.getElementById('log-example').innerText = 'Dec 15 08:30:15 webserver01 httpd: 192.168.1.100 - - [15/Dec/2023:08:30:15 +0000] "GET /admin.php"';
+            // 파일 정보를 동적으로 로드
+            await loadFileInfo(fileId);
 
             showPage('analysis-page');
         }

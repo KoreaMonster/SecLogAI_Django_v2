@@ -1,5 +1,5 @@
 """
-Chatbot API Views
+Chatbot API Views (session_id 전달 추가)
 """
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -49,15 +49,20 @@ class ChatMessageView(APIView):
             session = get_object_or_404(ChatSession, id=session_id)
             thread_id = session.thread_id
         else:
-            # 새 세션 생성
+            # 새 세션 생성 (임시, thread_id는 나중에 업데이트)
+            session = ChatSession.objects.create(
+                thread_id="temp",  # 임시값
+                log_file_id=log_file_id
+            )
             thread_id = None
-            session = None
+            session_id = session.id
 
-        # 5. GPT에게 메시지 보내고 응답 받기
+        # 5. GPT에게 메시지 보내고 응답 받기 (session_id 전달!)
         try:
             assistant_response, thread_id = chatbot_service.chat(
                 user_message=user_message,
-                thread_id=thread_id
+                thread_id=thread_id,
+                session_id=str(session_id)  # ✨ session_id 전달
             )
         except Exception as e:
             return Response(
@@ -65,12 +70,10 @@ class ChatMessageView(APIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
-        # 6. 새 세션이면 DB에 저장
-        if not session:
-            session = ChatSession.objects.create(
-                thread_id=thread_id,
-                log_file_id=log_file_id
-            )
+        # 6. 새 thread_id면 세션 업데이트
+        if session.thread_id == "temp":
+            session.thread_id = thread_id
+            session.save()
 
         # 7. 메시지 저장 (사용자 + AI)
         ChatMessage.objects.create(
