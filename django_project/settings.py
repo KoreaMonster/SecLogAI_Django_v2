@@ -81,7 +81,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # ✨ templates 폴더 추가
+        'DIRS': [BASE_DIR],  # ✨ templates 폴더 추가
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
