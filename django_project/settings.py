@@ -59,13 +59,9 @@ REST_FRAMEWORK = {
     ]
 }
 
-# CORS 설정
-CORS_ALLOWED_ORIGINS = [
-    "https://koreamonster.github.io",
-    "http://127.0.0.1:8000",
-    "http://localhost:8000",
-]
-CORS_ALLOW_ALL_ORIGINS = True  # 개발용
+# CORS 설정 제거 또는 비활성화 (같은 출처에서 서빙하므로 불필요)
+# CORS_ALLOWED_ORIGINS = []
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,7 +80,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR],  # ✨ templates 폴더 추가
+        'DIRS': [BASE_DIR],  # 프로젝트 루트에서 템플릿 찾기
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -96,13 +92,17 @@ TEMPLATES = [
         },
     },
 ]
+# 정적 파일 설정
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic 수집 경로
+
+# 미디어 파일 설정
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
-# STATICFILES_DIRS 추가
-STATICFILES_DIRS = [
-    BASE_DIR,  # 최상위 디렉토리
-]
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

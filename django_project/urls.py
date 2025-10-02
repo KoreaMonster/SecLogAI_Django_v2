@@ -12,9 +12,10 @@ urlpatterns = [
     path('api/analysis/', include('analysis.urls')),
     path('api/chatbot/', include('chatbot.urls')),
 
-    # 단일 페이지 라우팅 (index.html만 사용)
+    # 루트 경로에서 index.html 서빙
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
 ]
 
+# 미디어 파일 서빙 (업로드된 로그 파일)
 if settings.DEBUG:
-    urlpatterns += static('/', document_root=settings.BASE_DIR)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
