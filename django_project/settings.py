@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import boto3
+from botocore.exceptions import ClientError
+
 
 load_dotenv()
 
@@ -29,7 +32,7 @@ SECRET_KEY = 'django-insecure--!-3!uyw378%s0o@a@im6sx1$xk30!k71s8g2z9a5m0^_54i25
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver', '*']
 
 # Application definition
 
@@ -156,6 +159,19 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+def get_ssm_parameter(parameter_name, region='us-east-1'):
+    """AWS SSM Parameter Store에서 파라미터 값 가져오기"""
+    try:
+        ssm = boto3.client('ssm', region_name=region)
+        response = ssm.get_parameter(
+            Name=parameter_name,
+            WithDecryption=True
+        )
+        return response['Parameter']['Value']
+    except ClientError as e:
+        print(f"SSM Parameter 가져오기 실패: {e}")
+        return None
+
 # OpenAI 설정
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-OPENAI_MODEL = os.getenv('OPENAI_MODEL', 'gpt-3.5-turbo')  # 기본값 설정
+OPENAI_API_KEY = get_ssm_parameter('/SecLogAI/prod/gpt_API_KEY')
+OPENAI_MODEL = 'gpt-4o-mini'
